@@ -25,6 +25,7 @@
 
 	<link rel="stylesheet" href="../css/responsive.css" type="text/css" />
 	<link rel="stylesheet" href="../custom.css" type="text/css" />
+
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	
 	<style>
@@ -40,55 +41,6 @@
 
 <body class="stretched">
 
-<div class="modal-on-load" data-target="#myModal1"></div>
-
-<!-- Modal -->
-<div class="modal1 mfp-hide popup" id="myModal1" style="max-width: 700px; margin:auto">
-	<div class="block divcenter" >
-		<div class="row">
-			<div class="col-md-8 signup-tabs">
-
-				<div class="tabs clearfix" id="tabs">
-				
-					<ul class="tab-nav clearfix">
-						<li>
-							<a href="#tab-1">Igniter</a>
-						</li>
-						<li>
-							<a href="#tab-3">Member</a>
-						</li>
-					</ul>
-				
-					<div class="tab-container">
-				
-						<div class="tab-content clearfix" id="tab-1">
-							<div class="col-md-12" style="text-align: center">
-								<h4>
-									Find Your Dream Team</h4>
-								<p>Lrorem ipsum donor fminet </p>
-							</div>
-						</div>
-
-						<div class="tab-content clearfix" id="tab-3">
-							This is Tab 3 Content
-						</div>
-				
-					</div>
-				
-				</div>
-
-			</div>
-			<div class="col-md-4 description">
-				<h1>Why Us</h1>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias libero magnam dolores ipsam odio iure, error explicabo quasi eos, aspernatur alias odit inventore voluptas consectetur consequatur ut nobis dolorum optio.</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias libero magnam dolores ipsam odio iure, error explicabo quasi eos, aspernatur alias odit inventore voluptas consectetur consequatur ut nobis dolorum optio.</p>
-				<h1>Join Us Now</h1>
-			</div>
-		</div>
-		
-	</div>
-</div>
-
 	<div class="body-overlay"></div>
 
 	<!-- Document Wrapper
@@ -97,9 +49,10 @@
 
 		<!-- Header
 		============================================= -->
-		<header id="header" class="full-header transparent-header border-full-header dark static-sticky" data-sticky-class="not-dark" data-sticky-offset="full" data-sticky-offset-negative="100">
+		<header id="header" style="background: #000"  class="full-header transparent-header border-full-header dark static-sticky" data-sticky-class="not-dark" data-sticky-offset="full" data-sticky-offset-negative="100" >
 
-			<div id="header-wrap">
+			<div id="header-wrap" style="background-image: url('images/page/banner.jpg'); background-size: cover; background-position: center center; opacity:
+            1">
 
 				<div class="container clearfix">
 
@@ -117,12 +70,7 @@
 					<nav id="primary-menu">
 
 						<ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
-							<li><a href="#" data-href="#wrapper"><div>Home</div></a></li>
-							<li><a href="#" data-href="#section-about"><div>Team Igniter</div></a></li>
-							<li><a href="#" data-href="#section-works"><div>Team member</div></a></li>
-							<li><a href="#" data-href="#section-services"><div>Projects</div></a></li>
-							<li><a href="#" data-href="#section-blog"><div>Services</div></a></li>
-							<li><a href="#" data-href="#section-contact"><div>About Us</div></a></li>
+                            <li><a href="#"><i class="fa fa-user"></i></a></li>
 						</ul>
 
 					</nav><!-- #primary-menu end -->
@@ -135,38 +83,6 @@
 
 		<!-- Slider
 		============================================= -->
-		<section id="slider" class="slider-element slider-parallax full-screen force-full-screen" style="background: #000">
-
-			<div class="slider-parallax-inner">
-
-				<div class="full-screen force-full-screen dark section nopadding nomargin noborder ohidden" style="background-image: url('images/page/banner.jpg'); background-size: cover; background-position: center center; opacity: 1">
-
-					<div class="container center">
-						<div class="vertical-middle">
-							<div class="emphasis-title">
-								<div class="hexagon-container" style="color:#ffc527">
-									<div style="max-width:400px; border-bottom:2px solid #ffc527; margin: 0 auto; "></div>
-									<h1 style="color:#ffc527; letter-spacing: 5px">T E A M V O L V E R</h1>
-									<p style="font-size: 20px; letter-spacing: 5px">A PLATFORM FOR CREATING TEAMS THAT DEVELOPE PROJECTS</p>
-								</div>
-								<!-- <div id="canvas" style="max-width: 500px; margin: auto" ></div> -->
-							</div>
-							<a href="#" class="button button-border button-light button-circle" data-scrollto="#section-works" data-easing="easeInOutExpo" data-speed="1250" data-offset="70">How It Works</a>
-						</div>
-					</div>
-
-					<div class="video-wrap">
-						<div class="video-overlay" style="background-color: rgba(0,0,0,0.55);"></div>
-					</div>
-
-					<a href="#" data-scrollto="#section-about" data-easing="easeInOutExpo" data-speed="1250" data-offset="65" class="one-page-arrow dark"><i class="icon-angle-down infinite animated fadeInDown"></i></a>
-
-				</div>
-
-			</div>
-
-		</section><!-- #slider end -->
-
 		<!-- Content
 		============================================= -->
 		<section id="content">

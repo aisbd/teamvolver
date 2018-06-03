@@ -1,0 +1,56 @@
+.popup .description{
+    background:rgba(255, 197, 39, .8) ;
+}
+  .popup .description *{
+    color:#fff;
+}
+.mfp-bg{
+    background: #00000066;
+}
+  
+.signup-tabs{
+    background: #fff;
+    padding: 0;
+}
+ul.tab-nav:not(.tab-nav-lg) li:first-child{
+        margin-left: 0;
+    border-left:0;
+}
+ul.tab-nav:not(.tab-nav-lg) li {
+    width: 50%;
+    float: left;
+    border: 1px solid #DDD;
+    border-bottom: 0;
+    border-left: 0;
+    height: 41px;
+    text-align: center;
+}
+
+ul.tab-nav:not(.tab-nav-lg) li a{
+    height: 50px;
+    line-height: 50px;
+    font-weight: normal;
+    font-size: 12px;
+    text-transform: uppercase;
+    background: #ffc52721;
+    color:#ffc552;
+}
+
+ul.tab-nav:not(.tab-nav-lg) li.ui-tabs-active a {
+    position: relative;
+    top: 0;
+    background-color: #ffc527;
+    color:#fff;
+}
+ul.tab-nav:not(.tab-nav-lg) li{
+    border:0;
+}
+ul.tab-nav:not(.tab-nav-lg){
+    border-bottom: 0;
+}
+.tab-container{
+    top:15px;
+}
+.mfp-close-btn-in .mfp-close{
+    display: none;
+}
