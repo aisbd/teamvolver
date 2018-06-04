@@ -1,8 +1,15 @@
 .popup .description{
     background:rgba(255, 197, 39, .8) ;
+    padding: 30px;
 }
+
   .popup .description *{
     color:#fff;
+}
+  .popup .description h2{
+      font-size: 25px;
+      margin-bottom: 0px;
+      text-transform: uppercase;
 }
 .mfp-bg{
     background: #00000066;
@@ -53,4 +60,28 @@ ul.tab-nav:not(.tab-nav-lg){
 }
 .mfp-close-btn-in .mfp-close{
     display: none;
+}
+
+.tab-container h4{
+    margin: 0;
+    font-weight: normal;
+    text-transform: uppercase;  
+}
+
+.form-control{
+    border:0px !important ;
+    border-bottom: 1px solid #ced4da !important; 
+    padding-left: 0px !important; 
+     font-size: 0.9em !important;
+     font-style: italic !important;
+}
+.form-control:focus{
+    border-bottom: 1px solid #ffc527 !important;
+}
+label{
+    margin-top: 5px !important;
+    margin-bottom: 0px !important;
+    font-size: 15px !important;
+    font-weight: normal !important;
+    text-transform: none !important;
 }
