@@ -1,3 +1,35 @@
+#content.admin{
+    background: #fbfbfb;
+}
+#sidebar{
+    width: 80px;
+    background: #fff;
+    min-height: 800px;
+    float: left;
+    /* border-right:1px solid #f0f0f0; */
+-webkit-box-shadow: 96px 11px 163px 125px rgb(0,0,0);
+-moz-box-shadow: 96px 11px 163px 125px rgb(0,0,0);
+box-shadow: 96px 11px 163px 125px rgb(0,0,0);
+}
+#sidebar ul{
+    background: red;
+    display: inline-block;
+    width: 100%;
+}
+#sidebar ul li{
+    background: green;
+    list-style-type: none;
+}
+
+#sidebar ul li a{
+    padding: 10px;
+}
+
+#sidebar ul li .fa{
+    color:#000;
+}
+
+
 .popup .description{
     background:rgba(255, 197, 39, .8) ;
     padding: 30px;
@@ -46,7 +78,7 @@ ul.tab-nav:not(.tab-nav-lg) li a{
 ul.tab-nav:not(.tab-nav-lg) li.ui-tabs-active a {
     position: relative;
     top: 0;
-    background-color: #ffc527;
+    background-color: #ffc107;
     color:#fff;
 }
 ul.tab-nav:not(.tab-nav-lg) li{
@@ -76,7 +108,7 @@ ul.tab-nav:not(.tab-nav-lg){
      font-style: italic !important;
 }
 .form-control:focus{
-    border-bottom: 1px solid #ffc527 !important;
+    border-bottom: 1px solid #ffc107 !important;
 }
 label{
     margin-top: 5px !important;
@@ -85,3 +117,28 @@ label{
     font-weight: normal !important;
     text-transform: none !important;
 }
+.button.primary{
+    color:#fff;
+    background: #ffc107;
+    font-weight: normal;
+     text-shadow: none;
+     min-width: 200px;
+     font-size: .9em;
+}
+
+.button.primary:hover{
+    background: #fdc006;
+}
+
+a {
+    text-decoration: none !important;
+    color: #ffc107;
+}
+
+a:hover{
+    color: #ffc509;
+}
+.italic{
+    font-style: italic;
+}
+
