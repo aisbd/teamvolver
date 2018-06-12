@@ -1,67 +1,44 @@
 <nav class="col-md-2 sidebar">
-    <div class="user-box text-center pt-5 pb-3">
-        <div class="user-img">
-            <img src="{{ auth()->user()->present()->avatar }}"
-                 width="90"
-                 height="90"
-                 alt="user-img"
-                 class="rounded-circle img-thumbnail img-responsive">
-        </div>
-        <h5 class="my-3">
-            <a href="{{ route('profile') }}">{{ auth()->user()->present()->nameOrEmail }}</a>
-        </h5>
-
-        <ul class="list-inline mb-2">
-            <li class="list-inline-item">
-                <a href="{{ route('profile') }}" title="@lang('app.my_profile')">
-                    <i class="fas fa-cog"></i>
-                </a>
-            </li>
-
-            <li class="list-inline-item">
-                <a href="{{ route('auth.logout') }}" class="text-custom" title="@lang('app.logout')">
-                    <i class="fas fa-sign-out-alt"></i>
-                </a>
-            </li>
-        </ul>
-    </div>
-
     <div class="sidebar-sticky">
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('/') ? 'active' : ''  }}" href="{{ route('dashboard') }}">
+                <a data-toggle="tooltip" data-placement="bottom" title="@lang('app.dashboard')" class="nav-link {{ Request::is('/') ? 'active' : ''  }}" href="{{ route('dashboard') }}">
                     <i class="fas fa-home"></i>
-                    <span>@lang('app.dashboard')</span>
                 </a>
             </li>
 
             @permission('users.manage')
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('user*') ? 'active' : ''  }}" href="{{ route('user.list') }}">
+                <a data-toggle="tooltip" data-placement="bottom" title="@lang('app.users')"  class="nav-link {{ Request::is('user*') ? 'active' : ''  }}" href="{{ route('user.list') }}">
                     <i class="fas fa-users"></i>
-                    <span>@lang('app.users')</span>
                 </a>
             </li>
             @endpermission
 
             @permission('users.activity')
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('activity*') ? 'active' : ''  }}" href="{{ route('activity.index') }}">
+                <a data-toggle="tooltip" data-placement="bottom" title="@lang('app.activity_log')"  class="nav-link {{ Request::is('activity*') ? 'active' : ''  }}" href="{{ route('activity.index') }}">
                     <i class="fas fa-server"></i>
-                    <span>@lang('app.activity_log')</span>
                 </a>
             </li>
             @endpermission
-
+            <li class="nav-item">
+                <a data-toggle="tooltip" data-placement="bottom" title="Logout"  class="nav-link " href="{{ route('auth.logout') }}">
+                    <i class="fas fa-power-off"></i>
+                </a>
+            </li>
+{{-- 
             @permission(['roles.manage', 'permissions.manage'])
             <li class="nav-item">
-                <a href="#roles-dropdown"
+                <span  data-toggle="tooltip" data-placement="bottom" title="@lang('app.roles_and_permissions')"   >
+                                <a href="#roles-dropdown"
                    class="nav-link"
                    data-toggle="collapse"
                    aria-expanded="{{ Request::is('role*') || Request::is('permission*') ? 'true' : 'false' }}">
                     <i class="fas fa-users-cog"></i>
-                    <span>@lang('app.roles_and_permissions')</span>
                 </a>
+                </span>
+
                 <ul class="{{ Request::is('role*') || Request::is('permission*') ? '' : 'collapse' }} list-unstyled sub-menu" id="roles-dropdown">
                     @permission('roles.manage')
                     <li class="nav-item">
@@ -81,13 +58,15 @@
 
             @permission(['settings.general', 'settings.auth', 'settings.notifications'], false)
             <li class="nav-item">
-                <a href="#settings-dropdown"
+                <span data-toggle="tooltip" data-placement="bottom" title="@lang('app.activity_log')">
+                 <a   href="#settings-dropdown"
                    class="nav-link"
                    data-toggle="collapse"
                    aria-expanded="{{ Request::is('settings*') ? 'true' : 'false' }}">
                     <i class="fas fa-cogs"></i>
-                    <span>@lang('app.settings')</span>
                 </a>
+                </span>
+
                 <ul class="{{ Request::is('settings*') ? '' : 'collapse' }} list-unstyled sub-menu"
                     id="settings-dropdown">
 
@@ -115,7 +94,7 @@
                     @endpermission
                 </ul>
             </li>
-            @endpermission
+            @endpermission --}}
         </ul>
     </div>
 </nav>

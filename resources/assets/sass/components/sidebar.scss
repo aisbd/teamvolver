@@ -1,14 +1,17 @@
-$sidebar-bg-color: #30353e;
+$sidebar-bg-color: #fff;
 
 .sidebar {
   top: 70px;
-  width: 250px;
-  min-width: 250px;
+  width: 80px;
+  min-width: 80px;
   z-index: 10;
   background: $sidebar-bg-color;
   bottom: 0;
   margin-top: 0;
   padding-bottom: 30px;
+  padding-left:0;
+  padding-right: 0;
+  text-align:center;
   position: fixed;
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0 0 rgba(0, 0, 0, 0.02);
 
@@ -55,7 +58,10 @@ $sidebar-bg-color: #30353e;
 
 .sidebar .nav-link {
   font-weight: 400;
+  height: 50px;
+  line-height: 50px;
   color: $gray-500;
+  padding: 0 !important;
 }
 
 .sidebar .nav-link.active,
@@ -64,11 +70,15 @@ $sidebar-bg-color: #30353e;
 }
 
 .sidebar .nav-link.active {
-  background-color: lighten($sidebar-bg-color, 5%);
+
+  background:$primary;
+  color: #fff;
+
+  // background-color: lighten($sidebar-bg-color, 5%);
 }
 
 .sidebar .sub-menu li {
-  padding-left: 40px;
+  padding-left: 10px;
 }
 
 .sidebar-heading {
@@ -80,7 +90,6 @@ $sidebar-bg-color: #30353e;
   display: inline-block;
   font-size: 16px;
   line-height: 17px;
-  margin-right: 13px;
   text-align: center;
   vertical-align: middle;
   width: 20px;
@@ -119,4 +128,18 @@ $sidebar-bg-color: #30353e;
   text-align: right;
   padding-left: 5px;
   font-weight: 900;
+}
+
+.sub-menu{
+  background:#fff;
+  position: absolute;
+  left:66px;
+  top:20px;
+
+}
+.nav-item{
+  position:relative;
+}
+.sidebar-sticky{
+  overflow: visible;
 }

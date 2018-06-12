@@ -1,8 +1,10 @@
-<nav class="navbar fixed-top align-items-start navbar-expand-lg pl-0 pr-0 py-0" >
+<nav class="navbar fixed-top align-items-start navbar-expand-lg pl-0 pr-0 py-0"  >
+    <div style=" position:absolute ; background-image: url(/theme/one-page/images/page/banner.jpg);  width:100%; height:70px; opacity:.5; background-position:center     ">
 
-    <div class="navbar-brand-wrapper d-flex align-items-center justify-content-center">
+    </div>
+    <div class="navbar-brand-wrapper d-flex align-items-center ">
         <a class="navbar-brand mr-0" href="{{ url('/') }}">
-            <img src="{{ url('assets/img/vanguard-logo.png') }}" height="35" alt="{{ settings('app_name') }}">
+            <img src="{{ url('assets/img/logo.png') }}" height="70" alt="{{ settings('app_name') }}">
         </a>
     </div>
 
