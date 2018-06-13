@@ -3,7 +3,7 @@
 <head>
 
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="author" content="SemiColonWeb" />
+	<meta name="author" content="Seelim" />
 
 	<!-- Stylesheets
 	============================================= -->
@@ -38,8 +38,9 @@
 		}
 	</style>
 	<!-- Document Title
-	============================================= -->
-	<title>One Page Module | Canvas</title>
+    ============================================= -->
+    
+    <title>@yield('page-title') - {{ settings('app_name') }}</title>
 
 </head>
 
@@ -100,12 +101,42 @@
 									</form>
 								</div>
 							</div>
-						</div>
-
+                        </div>
 						<div class="tab-content clearfix" id="tab-3">
-							This is Tab 3 Content
-						</div>
-				
+							<div class="col-md-12" style="text-align: center">
+								<h4>
+									Find Your Dream Team</h4>
+								<p>Lrorem ipsum donor fminet </p>
+							</div>
+							<div class="row">
+								<div class="col-md-12" style="padding: 30px;padding-left:50px; padding-right: 50px; ">
+									<form action="">
+										<div class="form-group">
+											<label for="fullname">Full Name</label>
+											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Enter Full Name">
+										</div>
+										<div class="form-group">
+											<label for="fullname">Email</label>
+											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Example: someone@example.com">
+										</div>
+										<div class="form-group">
+											<label for="fullname">Password</label>
+											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Atleast 6 digits">
+										</div>
+										<div class="form-group">
+											<label for="fullname">Where you live</label>
+											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Example: New York, US">
+										</div>
+										<button class="button button-circle primary">Sign up</button>
+										<div style="float: right;text-align: right">
+											<span class="italic">Already a Member?</span> <br>
+											<u><a  href="#">LOGIN</a></u>
+											
+										</div>
+									</form>
+								</div>
+							</div>
+                        </div>                        
 					</div>
 				
 				</div>
@@ -244,9 +275,36 @@
 
 					<div class="clear"></div>
 
-		
 
-					</div>
+
+                    </div>
+                    
+                         {{-- section # how it works --}}
+        <div class="container-fluid" id="howWeWork">
+            <div class="background-image"></div>
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2"><i style="left:-20px; top:-20px" class="fa fa-file"></i><i style="right:-20px;  top:-20px" class="fa fa-play"></i></div>
+                    <div class="col-md-2">
+                        <i style="left:-20px; bottom:-20px" class="fa fa-file"></i>
+                        <div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-2"><i style="left:-20px;  top:-20px" class="fa fa-file"></i></div>
+                    <div class="col-md-2"><i style="left:-20px; bottom:-20px" class="fa fa-file"></i></div>
+                    <div class="col-md-2"><i style="left:-20px; top:40px" class="fa fa-file"></i></div>
+                </div>  
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2"><i style="left:-20px; top:-20px" class="fa fa-file"></i><i style="right:-20px;  top:-20px" class="fa fa-play"></i></div>
+                    <div class="col-md-2"><i style="left:-20px; bottom:-20px" class="fa fa-file"></i><i style="right:-20px; bottom:-20px" class="fa fa-play"></i></div>
+                    <div class="col-md-2"><i style="left:-20px;  top:-20px" class="fa fa-file"></i><i style="right:-20px; top:-20px" class="fa fa-play"></i></div>
+                    <div class="col-md-2"><i style="left:-20px; bottom:-20px" class="fa fa-file"></i></div>
+                    <div class="col-md-2"><i style="left:-20px; top:50px" class="fa fa-file"></i></div>
+                </div>  
+            </div>
+{{-- section # how it works --}}
 
 				</div>
 
@@ -254,7 +312,11 @@
 
 			</div>
 
+
+
 		</section><!-- #content end -->
+
+
 
 		<!-- Footer
 		============================================= -->
@@ -325,7 +387,7 @@
 
 			<div id="copyrights">
 				<div class="container center clearfix">
-					Copyright Canvas 2015 | All Rights Reserved
+					Copyright TeamVolver {{date('Y')}} | All Rights Reserved
 				</div>
 			</div>
 

@@ -26,6 +26,7 @@
 @import "components/table";
 @import "components/util";
 @import "components/datepicker";
+@import "components/howWeWork";
 
 @include media-breakpoint-down(md) {
   .sidebar:not(.expanded) {
