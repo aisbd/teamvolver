@@ -3,42 +3,59 @@
         background:#fff;
         color: $primary;
         position: absolute;
-        height: 40px;
-        width: 40px;
+        height: 46px;
+        width: 46px;
         line-height: 40px;
+        font-size: 18px;
         border-radius: 50%;
+        border: 3px solid #eee;
+        
     }
     .col-md-2{
         position: relative;
+        color:#fff;
+        div{
+            text-align:left;
+            position: absolute;
+            width:  calc(100% - 30px) !important;
+            display: inline-block;
+            h3{
+                font-size:14px;
+            }
+            h2{
+                font-size: 20px;
+                color: #ccc; 
+            }
+        }
     }
     background:#000;
     padding:100px;
     .col-md-2:nth-child(2){
         height: 200px;
-        border-top:2px dashed red;
+        border-top:2px dashed #f1b607;
         border-right:2px dashed red;
     }
     .col-md-2:nth-child(3){
         height: 100px;
-        border-bottom:2px dashed red;
-        border-right:2px dashed red;
+        border-bottom:3px dashed lightblue;
+        border-right:3px dashed lightblue;
         margin-top:100px;
     }
     .col-md-2:nth-child(4){
         margin-top:100px;
         height: 200px;
-        border-top:2px dashed red;
-        border-right:2px dashed red;
+        border-top:3px dashed purple;
+        border-right:3px dashed purple;
     }
     .col-md-2:nth-child(5){
         margin-top:100px;
         height: 200px;
-        border-bottom:2px dashed red;
+        border-bottom:3px dashed lightgreen;
     }
     .col-md-2:nth-child(6){
         margin-top:50px;
         height: 250px;
-        border-left:2px dashed red;
+        border-left:3px dashed lightgreen;
     }
 }
 .background-image{

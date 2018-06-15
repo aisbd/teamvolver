@@ -284,25 +284,140 @@
             <div class="background-image"></div>
                 <div class="row">
                     <div class="col-md-2"></div>
-                    <div class="col-md-2"><i style="left:-20px; top:-20px" class="fa fa-file"></i><i style="right:-20px;  top:-20px" class="fa fa-play"></i></div>
                     <div class="col-md-2">
-                        <i style="left:-20px; bottom:-20px" class="fa fa-file"></i>
+
+						<div style="left:calc(100% + 30px); top:-25px; font-size:12px; line-height:15px;">
+							<h2>1</h2>
+							<h3>POST YOUR PROJECT</h3>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam minima esse accusantium distinctio quidem 
+							</p>
+						 </div>
+
+						<div style=" top:180px; left:-10px; font-size:12px; line-height:15px; text-align:right">
+							<h2>2</h2>
+							<h3>POST YOUR PROJECT</h3>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam minima esse accusantium distinctio quidem 
+							</p>
+						 </div>
+						<div style="left:-100px; top:-15px; font-size:12px; line-height:15px;">START <br> AS IGNTER </div>
+                        <i style="left:-10px; top:-10px; border:0; height:20px; width:20px; line-height:20px; font-size:9px; background:#ffc107;color:#fff" class="fa fa-play"></i>
+                        <i style="right:-20px;  top:-20px" class="fa fa-file"></i>
+       
+                    </div>
+                    <div class="col-md-2">
+						
+                        <i style="left:-20px; bottom:-20px; color:red;" class="fa fa-search"></i>
                         <div>
-                            
+
                         </div>
                     </div>
-                    <div class="col-md-2"><i style="left:-20px;  top:-20px" class="fa fa-file"></i></div>
-                    <div class="col-md-2"><i style="left:-20px; bottom:-20px" class="fa fa-file"></i></div>
-                    <div class="col-md-2"><i style="left:-20px; top:40px" class="fa fa-file"></i></div>
-                </div>  
-                <div class="row">
+					<div class="col-md-2">
+
+						<div style=" top:25px; left:25px; font-size:12px; line-height:15px;">
+							<h2>03</h2>
+							<h3>POST YOUR PROJECT</h3>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam minima esse accusantium distinctio quidem 
+							</p>
+						 </div>
+
+						<i style="left:-20px;  top:-20px; color:blue" class="fa fa-users"></i>
+					</div>
+					<div class="col-md-2"><i style="left:-20px; bottom:-20px; color:purple" class="fa fa-sitemap"></i>
+					
+
+
+						<div style=" bottom:0; left:35px; font-size:12px; line-height:15px;">
+							<h2>4</h2>
+							<h3>POST YOUR PROJECT</h3>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam minima esse accusantium distinctio quidem 
+							</p>
+						 </div>
+
+					</div>
+					<div class="col-md-2"><i style="left:-25px; top:40px; color:lightgreen" class="fa fa-binoculars"></i>
+					<div style="background:lightgreen; height:20px; width:20px !important; position: absolute;
+    border-radius: 50%;
+    left: -12px;
+    top: -11px; border-radius:50%;"></div>
+
+						<div style=" top:45px; left:35px; font-size:12px; line-height:15px;">
+							<h2>05</h2>
+							<h3>POST YOUR PROJECT</h3>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam minima esse accusantium distinctio quidem 
+							</p>
+						 </div>
+
+					</div>
+				</div>  
+				
+                <div class="row" style="margin-top:140px">
                     <div class="col-md-2"></div>
-                    <div class="col-md-2"><i style="left:-20px; top:-20px" class="fa fa-file"></i><i style="right:-20px;  top:-20px" class="fa fa-play"></i></div>
-                    <div class="col-md-2"><i style="left:-20px; bottom:-20px" class="fa fa-file"></i><i style="right:-20px; bottom:-20px" class="fa fa-play"></i></div>
-                    <div class="col-md-2"><i style="left:-20px;  top:-20px" class="fa fa-file"></i><i style="right:-20px; top:-20px" class="fa fa-play"></i></div>
-                    <div class="col-md-2"><i style="left:-20px; bottom:-20px" class="fa fa-file"></i></div>
-                    <div class="col-md-2"><i style="left:-20px; top:50px" class="fa fa-file"></i></div>
-                </div>  
+                    <div class="col-md-2">
+
+						<div style="left:calc(100% + 30px); top:-25px; font-size:12px; line-height:15px;">
+							<h2>01</h2>
+							<h3>POST YOUR PROJECT</h3>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam minima esse accusantium distinctio quidem 
+							</p>
+						 </div>
+
+						<div style=" top:180px; left:-10px; font-size:12px; line-height:15px; text-align:right">
+							<h2>02</h2>
+							<h3>POST YOUR PROJECT</h3>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam minima esse accusantium distinctio quidem 
+							</p>
+						 </div>
+						<div style="left:-100px; top:-15px; font-size:12px; line-height:15px;">START <br> AS IGNTER </div>
+                        <i style="left:-10px; top:-10px; border:0; height:20px; width:20px; line-height:20px; font-size:9px; background:#ffc107;color:#fff" class="fa fa-play"></i>
+                        <i style="right:-20px;  top:-20px" class="fa fa-file"></i>
+       
+                    </div>
+                    <div class="col-md-2">
+						
+                        <i style="left:-20px; bottom:-20px; color:red;" class="fa fa-search"></i>
+                        <div>
+
+                        </div>
+                    </div>
+					<div class="col-md-2">
+
+						<div style=" top:25px; left:25px; font-size:12px; line-height:15px;">
+							<h2>03</h2>
+							<h3>POST YOUR PROJECT</h3>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam minima esse accusantium distinctio quidem 
+							</p>
+						 </div>
+
+						<i style="left:-20px;  top:-20px; color:blue" class="fa fa-users"></i>
+					</div>
+					<div class="col-md-2"><i style="left:-20px; bottom:-20px; color:purple" class="fa fa-sitemap"></i>
+					
+
+
+						<div style=" bottom:0; left:35px; font-size:12px; line-height:15px;">
+							<h2>04</h2>
+							<h3>POST YOUR PROJECT</h3>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam minima esse accusantium distinctio quidem 
+							</p>
+						 </div>
+		<div style="background:lightgreen; height:20px; width:20px !important; position: absolute;
+    border-radius: 50%;
+    right: -12px;
+    bottom: -11px; border-radius:50%;"></div>
+					</div>
+					
+				</div>  
+
+
             </div>
 {{-- section # how it works --}}
 
