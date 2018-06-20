@@ -1,6 +1,6 @@
 								
 								{{-- hexagon --}}
-	<svg width="100%" height="300" font-family="sans-serif" font-size="10" text-anchor="middle" style="margin-left:-280px"></svg>
+	<svg id="svg" width="100%" height="400" font-family="sans-serif" font-size="10" text-anchor="middle"></svg>
 	<script src="/d3/js/d3.min.js"></script>
 	<script src="/d3/js/d3-legend.min.js"></script>
 	<script>
@@ -9,44 +9,44 @@
 		let data = [
 
 		{
-			cat: 'language', name: '1', value: 1500,
+			cat: 'language', name: '1', value: 2000,
 			icon: '/d3/img/hex.png',
 			desc: `
 			`
 		},
 		{
-			cat: 'language', name: '2', value: 1500,
+			cat: 'language', name: '2', value: 2000,
 			icon: '/d3/img/hex.png',
 			desc: `
 			`
 		},
 
 		{
-			cat: 'language', name: '3', value: 1500,
+			cat: 'language', name: '3', value: 2000,
 			icon: '/d3/img/hex.png',
 			desc: `
 			`
 		},
 		{
-			cat: 'language', name: '4', value: 1500,
+			cat: 'language', name: '4', value: 2000,
 			icon: '/d3/img/hex.png',
 			desc: `
 			`
 		},
 		{
-			cat: 'language', name: '5', value: 1500,
+			cat: 'language', name: '5', value: 2000,
 			icon: '/d3/img/hex.png',
 			desc: `
 			`
 		},
 		{
-			cat: 'language', name: '6', value: 1500,
+			cat: 'language', name: '6', value: 2000,
 			icon: '/d3/img/hex.png',
 			desc: `
 			`
 		},
 		{
-			cat: 'language', name: '7', value: 1500,
+			cat: 'language', name: '7', value: 2000,
 			icon: '/d3/img/hex.png',
 			desc: `
 			`
@@ -56,11 +56,12 @@
 
 	<script>
 		let svg = d3.select('svg');
-		let width = document.body.clientWidth; // get width in pixels
+		let width = document.getElementById('svg').clientWidth; // get width in pixels
+		
 		let height = +svg.attr('height');
 		let centerX = width * 0.5;
 		let centerY = height * 0.5;
-		let strength = 0.05;
+		let strength = 0.15;
 		let focusedNode;
 
 		let format = d3.format(',d');
@@ -70,7 +71,7 @@
 		// use pack to calculate radius of the circle
 		let pack = d3.pack()
 			.size([width , height ])
-			.padding(1.5);
+			.padding(0);
 
 		let forceCollide = d3.forceCollide(d => d.r + 1);
 
@@ -244,10 +245,10 @@
 				// no focusedNode or same focused node is clicked
 				return;
 			}
-			let lastNode = focusedNode;
+			let lastNode = focusedNode
 			focusedNode = currentNode;
 
-			simulation.alphaTarget(0.2).restart();
+			simulation.alphaTarget(.1).restart();
 			// hide all circle-overlay
 			d3.selectAll('.circle-overlay').classed('hidden', true);
 			d3.selectAll('.node-icon').classed('node-icon--faded', false);
@@ -322,7 +323,7 @@
 					})
 					.on('end', () => {
 						focusedNode = null;
-						simulation.alphaTarget(0);
+						simulation.alphaTarget(0.2);
 					})
 					.on('interrupt', () => {
 						simulation.alphaTarget(0);
@@ -340,4 +341,5 @@
 				.select('circle')
 					.attr('r', d => d.r);
 		}
+
 	</script>
