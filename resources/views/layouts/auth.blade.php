@@ -213,7 +213,11 @@
 									<h1 style="color:#ffc107; letter-spacing: 5px">T E A M V O L V E R</h1>
 									<p style="font-size: 20px; letter-spacing: 5px">A PLATFORM FOR CREATING TEAMS THAT DEVELOPE PROJECTS</p>
 								</div>
-								<!-- <div id="canvas" style="max-width: 500px; margin: auto" ></div> -->
+
+								{{-- hexagon --}}
+								@include('hexagon')
+								{{-- hexagon --}}
+								
 							</div>
 							<a href="#" class="button button-border button-light button-circle " data-scrollto="#section-works" data-easing="easeInOutExpo" data-speed="1250" data-offset="70">How It Works</a>
 						</div>
@@ -421,6 +425,64 @@
             </div>
 {{-- section # how it works --}}
 
+{{-- section our services --}}
+<section style="background:#fff"> 
+
+	<div class="container"  style="background:#fff">
+		<div class="row" style="background:#fff; margin-top:60px;">
+			<div class="col-md-12" >
+				<h4>OUR SERVICES</h4>
+				
+				<div class="tabs tabs-bb clearfix" id="tab-9">
+					
+					<ul class="tab-nav clearfix">
+						<li><a href="#tabs-33">LEGAL COUNSELLING</a></li>
+						<li><a href="#tabs-34">LEGAL COUNSELLING</a></li>
+						<li><a href="#tabs-35">INVESTORS PLATFORM</a></li>
+						<li class="hidden-phone"><a href="#tabs-36">ORGANIZATIONAL DEVELOPEMENT</a></li>
+					</ul>
+					
+					<div class="tab-container">
+						
+						<div class="tab-content clearfix" id="tabs-33">
+							<div class="row">
+
+							<div class="col-md-4">
+							<img src="/assets/theme/one-page/images/page/banner.jpg" alt="" class="img-responsive" >
+							</div>
+							<div class="col-md-8" style="text-align:left">
+
+							<h1>01</h1>
+							<h3>Your Guide towards  Organizational Developement</h3>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ad fuga facere eos voluptate. Eos ipsum quae dicta id, aliquam fugiat dolor debitis omnis. Aliquid nam autem vel laboriosam assumenda?</p>
+							<button class="btn btn-primary">GET IN TOUCH</button>
+							</div>
+							</div>
+						</div>
+						<div class="tab-content clearfix" id="tabs-34">
+							Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.
+						</div>
+						<div class="tab-content clearfix" id="tabs-35">
+							<p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
+							Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.
+						</div>
+						<div class="tab-content clearfix" id="tabs-36">
+							Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.
+						</div>
+						
+					</div>
+					
+				</div>
+				
+				<div class="line"></div>
+				
+			</div>
+		</div>
+	</div>
+	
+</section>
+	{{-- section our services --}}
+	
 				</div>
 
 		
@@ -576,7 +638,7 @@
 					'<span style="font-size: 13px; font-weight: bold"> {point.name}' +
 					'</span><br>{point.desc}',
 				style: {
-					width: 170
+					width: 150
 				},
 				padding: 10,
 				hideDelay: 1000000

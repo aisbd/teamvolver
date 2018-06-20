@@ -10561,6 +10561,18 @@ label {
   border: 1px solid #ffc107;
 }
 
+.tabs.tabs-bb ul.tab-nav li.ui-tabs-active a {
+  border-bottom: 2px solid #ffc107;
+}
+
+ul.tab-nav:not(.tab-nav-lg) li a {
+  color: #ffc107;
+}
+
+.tab-content {
+  display: inline-block;
+}
+
 .list-group.list-group-borderless .list-group-item {
   border: none;
 }
@@ -11196,12 +11208,28 @@ label {
   background-position: center;
   opacity: .1;
   position: absolute;
-  height: 100%;
   width: 100%;
 }
 
 .page-section {
   padding-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal !important;
+}
+
+.highcharts-contextbutton {
+  display: none;
+}
+
+.highcharts-credits {
+  display: none;
 }
 
 @media (max-width: 991.98px) {

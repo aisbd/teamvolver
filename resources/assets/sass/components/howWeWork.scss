@@ -64,9 +64,11 @@
     background-position: center;
     opacity: .1;
     position: absolute;
-    height: 100%;
     width: 100%;
 }
 .page-section{
     padding-bottom:0;
+}
+h1, h2, h3, h4, h5, h6{
+    font-weight: normal !important;
 }

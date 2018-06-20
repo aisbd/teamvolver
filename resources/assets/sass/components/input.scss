@@ -9,3 +9,13 @@
 .form-control{
   border: 1px solid $primary;
 }
+
+.tabs.tabs-bb ul.tab-nav li.ui-tabs-active a{
+      border-bottom: 2px solid $primary;
+}
+ul.tab-nav:not(.tab-nav-lg) li a{
+  color:$primary;
+}
+.tab-content{
+  display: inline-block;
+}
