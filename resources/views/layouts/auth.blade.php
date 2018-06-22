@@ -51,104 +51,11 @@
 <!-- Modal -->
 <div class="modal1 mfp-hide popup" id="myModal1" style="max-width: 900px; margin:auto">
 	<div class="block divcenter" >
-		<div class="row">
-			<div class="col-md-8 signup-tabs">
 
-				<div class="tabs clearfix" id="tabs">
-				
-					<ul class="tab-nav clearfix">
-						<li>
-							<a href="#tab-1">Igniter</a>
-						</li>
-						<li>
-							<a href="#tab-3">Member</a>
-						</li>
-					</ul>
-				
-					<div class="tab-container">
-				
-						<div class="tab-content clearfix" id="tab-1">
-							<div class="col-md-12" style="text-align: center">
-								<h4>
-									Find Your Dream Team</h4>
-								<p>Lrorem ipsum donor fminet </p>
-							</div>
-							<div class="row">
-								<div class="col-md-12" style="padding: 30px;padding-left:50px; padding-right: 50px; ">
-									<form action="">
-										<div class="form-group">
-											<label for="fullname">Full Name</label>
-											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Enter Full Name">
-										</div>
-										<div class="form-group">
-											<label for="fullname">Email</label>
-											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Example: someone@example.com">
-										</div>
-										<div class="form-group">
-											<label for="fullname">Password</label>
-											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Atleast 6 digits">
-										</div>
-										<div class="form-group">
-											<label for="fullname">Where you live</label>
-											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Example: New York, US">
-										</div>
-										<button class="button button-circle primary">Sign up</button>
-										<div style="float: right;text-align: right">
-											<span class="italic">Already a Member?</span> <br>
-											<u><a  href="#">LOGIN</a></u>
-											
-										</div>
-									</form>
-								</div>
-							</div>
-                        </div>
-						<div class="tab-content clearfix" id="tab-3">
-							<div class="col-md-12" style="text-align: center">
-								<h4>
-									Find Your Dream Team</h4>
-								<p>Lrorem ipsum donor fminet </p>
-							</div>
-							<div class="row">
-								<div class="col-md-12" style="padding: 30px;padding-left:50px; padding-right: 50px; ">
-									<form action="">
-										<div class="form-group">
-											<label for="fullname">Full Name</label>
-											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Enter Full Name">
-										</div>
-										<div class="form-group">
-											<label for="fullname">Email</label>
-											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Example: someone@example.com">
-										</div>
-										<div class="form-group">
-											<label for="fullname">Password</label>
-											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Atleast 6 digits">
-										</div>
-										<div class="form-group">
-											<label for="fullname">Where you live</label>
-											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Example: New York, US">
-										</div>
-										<button class="button button-circle primary">Sign up</button>
-										<div style="float: right;text-align: right">
-											<span class="italic">Already a Member?</span> <br>
-											<u><a  href="#">LOGIN</a></u>
-											
-										</div>
-									</form>
-								</div>
-							</div>
-                        </div>                        
-					</div>
-				
-				</div>
+		@include('register')
+		@include('login')
 
-			</div>
-			<div class="col-md-4 description">
-				<h2 style="margin-top: 30px;">Why Us</h2>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias libero magnam dolores ipsam odio iure, error explicabo quasi eos, aspernatur alias odit inventore voluptas consectetur consequatur ut nobis dolorum optio.</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias libero magnam dolores ipsam odio iure, error explicabo quasi eos, aspernatur alias odit inventore voluptas consectetur consequatur ut nobis dolorum optio.</p>
-				<h2 style="  margin-top: -20px; margin-bottom: 30px;">Join Us Now !</h2>
-			</div>
-		</div>
+
 		
 	</div>
 </div>
@@ -197,6 +104,7 @@
 
 		</header><!-- #header end -->
 
+		@yield('content')
 		<!-- Slider
 		============================================= -->
 		<section id="slider" class="slider-element slider-parallax full-screen force-full-screen" style="background: #000">
@@ -509,8 +417,9 @@
 							<div class="widget clearfix" >
 								<img src="/assets/img/logo.png" alt="" class="img-responsive">
 									<div class="clearfix" style="height: 20px;"></div>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem rerum, ratione officiis. Nihil explicabo pariatur, sunt sint rerum quibusdam repudiandae dolores totam, adipisci ipsam, eaque neque accusamus ab omnis ducimus.
-							</div>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem rerum, ratone					
+								</div>
+
 
 						</div>
 
@@ -595,101 +504,9 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/offline-exporting.js"></script>
 
-<script>
-	Highcharts.chart('canvas', {
-			chart: {
-				type: 'tilemap',
-				marginTop: 15,
-				height: '65%',
-				backgroundColor: 'rgba(0, 0, 0, 0.0)'
-			},
+@yield('scripts')
 
-			subtitle: {
-				text: 'Hover over tiles for details'
-			},
 
-			colors: [
-				'#fed',
-				'#ffddc0',
-				'#ecb',
-				'#dba',
-				'#c99',
-				'#b88',
-				'#aa7577',
-				'#9f6a66'
-			],
-
-			xAxis: {
-				visible: false
-			},
-
-			yAxis: {
-				visible: false
-			},
-
-			legend: {
-				enabled: false
-			},
-
-			tooltip: {
-				headerFormat: '',
-				backgroundColor: 'rgba(247,247,247,0.95)',
-				pointFormat: '<span style="color: {point.color}">●</span>' +
-					'<span style="font-size: 13px; font-weight: bold"> {point.name}' +
-					'</span><br>{point.desc}',
-				style: {
-					width: 150
-				},
-				padding: 10,
-				hideDelay: 1000000
-			},
-
-			plotOptions: {
-				series: {
-					keys: ['x', 'y', 'name', 'desc'],
-					tileShape: 'hexagon',
-					dataLabels: {
-						enabled: false,
-						format: '{point.name}',
-						color: '#000000',
-						style: {
-							textOutline: false
-						}
-					}
-				}
-			},
-
-			series: [{
-				name: 'Main idea',
-				pointPadding: 0,
-				data: [
-					[5, 3, 'Main idea',
-						'The main idea tile outlines the overall theme of the idea map.']
-				],
-				color: '#7eb'
-			}, {
-				name: 'Steps',
-				colorByPoint: true, // Pick new color for each point from colors array
-				data: [
-					[4, 3, 'Step 2',
-						'Describe where to move next in a short term time perspective.'],
-					[5, 4, 'Step 3',
-						'This can be a larger milestone, after the initial steps have been taken.'],
-					[6, 3, 'Step 4',
-						'Evaluate progress and readjust the course of the project.'],
-					[6, 2, 'Step 6',
-						'Second evaluation and readjustment step. Implement final changes.'],
-					[5, 2, 'Step 7',
-						'Testing and final verification step.'],
-					[4, 2, 'Step 8',
-						'Iterate after final testing and finalize implementation of the idea.']
-				]
-			}]
-		}, function (chart) {
-			chart.tooltip.refresh(chart.series[0].points[0]); // Show tooltip of the first point on load
-		});
-
-</script>
 
 	<script>
 

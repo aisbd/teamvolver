@@ -9,44 +9,44 @@
 		let data = [
 
 		{
-			cat: 'language', name: '1', value: 2000,
+			cat: 'language', name: '1', value: 2500,
 			icon: '/d3/img/hex.png',
 			desc: `
 			`
 		},
 		{
-			cat: 'language', name: '2', value: 2000,
+			cat: 'language', name: '2', value: 2500,
 			icon: '/d3/img/hex.png',
 			desc: `
 			`
 		},
 
 		{
-			cat: 'language', name: '3', value: 2000,
+			cat: 'language', name: '3', value: 2500,
 			icon: '/d3/img/hex.png',
 			desc: `
 			`
 		},
 		{
-			cat: 'language', name: '4', value: 2000,
+			cat: 'language', name: '4', value: 2500,
+			icon: '/d3/img/hex-copy.png',
+			desc: `
+			`
+		},
+		{
+			cat: 'language', name: '5', value: 2500,
 			icon: '/d3/img/hex.png',
 			desc: `
 			`
 		},
 		{
-			cat: 'language', name: '5', value: 2000,
+			cat: 'language', name: '6', value: 2500,
 			icon: '/d3/img/hex.png',
 			desc: `
 			`
 		},
 		{
-			cat: 'language', name: '6', value: 2000,
-			icon: '/d3/img/hex.png',
-			desc: `
-			`
-		},
-		{
-			cat: 'language', name: '7', value: 2000,
+			cat: 'language', name: '7', value: 2500,
 			icon: '/d3/img/hex.png',
 			desc: `
 			`
@@ -173,10 +173,10 @@
 			.classed('node-icon', true)
 			.attr('clip-path', d => `url(#clip-${d.id})`)
 			.attr('xlink:href', d => d.icon)
-			.attr('x', d => - d.radius * 0.7)
-			.attr('y', d => - d.radius * 0.7)
-			.attr('height', d => d.radius * 2 * 0.7)
-			.attr('width', d => d.radius * 2 * 0.7)
+			.attr('x', d => - d.radius *1.13)
+			.attr('y', d => - d.radius *1.13)
+			.attr('height', d => d.radius * 2 * 1.13 )
+			.attr('width', d => d.radius * 2 * 1.13)
 
 		node.append('title')
 			.text(d => (d.cat + '::' + d.name + '\n' + format(d.value)));

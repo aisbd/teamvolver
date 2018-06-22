@@ -28,6 +28,7 @@
 @import "components/datepicker";
 @import "components/howWeWork";
 @import "components/hexagon";
+@import "components/custom";
 
 @include media-breakpoint-down(md) {
   .sidebar:not(.expanded) {
