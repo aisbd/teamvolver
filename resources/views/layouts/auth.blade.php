@@ -44,7 +44,7 @@
 
 </head>
 
-<body class="stretched">
+<body class="stretched" >
 
 <div class="modal-on-load" data-target="#myModal1"></div>
 
@@ -484,8 +484,9 @@
 	<!-- Go To Top
 	============================================= -->
 	<div id="gotoTop" class="icon-angle-up"></div>
-
+<script src="/assets/js/app.js"></script>
 	<!-- External JavaScripts
+		
 	============================================= -->
 	<script src="/assets/theme/js/jquery.js"></script>
 	<script src="/assets/theme/js/plugins.js"></script>
@@ -503,6 +504,8 @@
 <script src="https://code.highcharts.com/modules/tilemap.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/offline-exporting.js"></script>
+
+
 
 @yield('scripts')
 

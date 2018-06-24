@@ -1,4 +1,5 @@
-		<div class="row register" id="register-form">
+<template>
+    		<div class="row register">
 			<div class="col-md-8 signup-tabs">
 
 				<div class="tabs clearfix" id="tabs">
@@ -42,7 +43,7 @@
 										<button class="button button-circle primary">Sign up</button>
 										<div style="float: right;text-align: right">
 											<span class="italic">Already a Member?</span> <br>
-											<u><a id="login-btn"  href="#">LOGIN</a></u>
+											<u><a  href="#">LOGIN</a></u>
 											
 										</div>
 									</form>
@@ -97,3 +98,11 @@
 				<h2 style="  margin-top: -20px; margin-bottom: 30px;">Join Us Now !</h2>
 			</div>
 		</div>
+</template>
+<script>
+    export default {
+        mounted() {
+            console.log('Component mounted.')
+        }
+    }
+</script>

@@ -21,8 +21,14 @@ mix.scripts([
     'public/assets/plugins/js-cookie/js.cookie.js',
     'public/vendor/jsvalidation/js/jsvalidation.js',
     'public/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js',
-    'public/assets/plugins/croppie/croppie.js'
+    'public/assets/plugins/croppie/croppie.js',
+    'resources/assets/js/app.js'
 ], 'public/assets/js/vendor.js');
+
+mix.js([
+    'resources/assets/js/app.js'
+], 'public/assets/js/app.js');
+
 
 mix.styles([
     'public/assets/css/fontawesome-all.min.css',

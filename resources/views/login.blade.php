@@ -1,4 +1,4 @@
- <div class="row login">
+ <div class="row login" id="login-form" style="display:none; margin:auto; max-width:400px">
      
  <div class="col-md-12 login-head" >
             <h5 class="card-title text-center mt-4 text-uppercase">
@@ -72,9 +72,9 @@
         </div>
     </div>
 
-    <div class="text-center text-muted">
+    <div class="text-center text-muted" style="margin-bottom:20px">
         @if (settings('reg_enabled'))
-            @lang('app.dont_have_an_account') <a class="font-weight-bold" href="<?= url("register") ?>">Sign Up</a>
+            @lang('app.dont_have_an_account') <a id="register-btn" class="font-weight-bold" href="#">Sign Up</a>
         @endif
     </div>
 
@@ -82,6 +82,6 @@
 
  </div>
 @section('scripts')
-    {!! HTML::script('assets/js/as/login.js') !!}
-    {!! JsValidator::formRequest('Vanguard\Http\Requests\Auth\LoginRequest', '#login-form') !!}
+    {{-- {!! HTML::script('assets/js/as/login.js') !!} --}}
+    {{-- {!! JsValidator::formRequest('Vanguard\Http\Requests\Auth\LoginRequest', '#login-form') !!} --}}
 @stop 
