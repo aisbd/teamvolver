@@ -56,8 +56,11 @@
 
 	<script>
 		let svg = d3.select('svg');
-		let width = document.getElementById('svg').clientWidth; // get width in pixels
-		
+	
+		let width = document.body.clientWidth; // get width in pixels
+		if(width > 574){
+			width = document.querySelector('svg').clientWidth;
+		}
 		let height = +svg.attr('height');
 		let centerX = width * 0.5;
 		let centerY = height * 0.5;
