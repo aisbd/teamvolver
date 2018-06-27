@@ -46,10 +46,10 @@
 
 <body class="stretched" >
 
-<div class="modal-on-load" data-target="#myModal1"></div>
+{{-- <div class="modal-on-load" data-target="#myModal1"></div> --}}
 
 <!-- Modal -->
-<div class="modal1 mfp-hide popup" id="myModal1" style="max-width: 900px; margin:auto">
+<div class="modal1 mfp-hide popup"  style="max-width: 900px; margin:auto">
 	<div class="block divcenter" >
 
 		@include('register')
