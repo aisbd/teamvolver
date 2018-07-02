@@ -8,6 +8,7 @@
 	<!-- Stylesheets
 	============================================= -->
 	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Roboto:300,400,500,700" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=IM+Fell+Double+Pica" rel="stylesheet">
 
 	<link rel="stylesheet" href="/assets/theme/style.css" type="text/css" />
 
@@ -117,9 +118,9 @@
 						<div class="vertical-middle">
 							<div class="emphasis-title">
 								<div class="hexagon-container" style="color:#ffc107">
-									<div style="max-width:400px; border-bottom:2px solid #ffc107; margin: 0 auto; "></div>
-									<h1 style="color:#ffc107; letter-spacing: 5px">T E A M V O L V E R</h1>
-									<p style="font-size: 20px; letter-spacing: 5px">A PLATFORM FOR CREATING TEAMS THAT DEVELOPE PROJECTS</p>
+									<div style="max-width:400px; border-bottom:2px solid #ffc107; margin: 0 auto; margin-bottom:20px;"></div>
+									<h2 style="color:#ffc107; letter-spacing: 5px; font-weight:normal; font-size:50px; margin-bottom:20px" class="double-pica">T E A M V O L V E R</h2>
+									<p style="font-size: 17px; letter-spacing: 5px; color:#ffc107">A PLATFORM FOR CREATING TEAMS THAT <br> DEVELOPE PROJECTS</p>
 								</div>
 
 								{{-- hexagon --}}
@@ -127,7 +128,7 @@
 								{{-- hexagon --}}
 								
 							</div>
-							<a href="#" class="button button-border button-light button-circle " data-scrollto="#section-works" data-easing="easeInOutExpo" data-speed="1250" data-offset="70">How It Works</a>
+							{{--<a href="#" class="button button-border button-light button-circle " data-scrollto="#section-works" data-easing="easeInOutExpo" data-speed="1250" data-offset="70">How It Works</a> --}}
 						</div>
 					</div>
 
@@ -148,17 +149,16 @@
 		<section id="content">
 
 			<div class="content-wrap nopadding">
-
-				<div id="section-about" class="center page-section">
-
-					<div class="container clearfix">
+				
+				<div class="center page-section" id="section-platform" >
+					<div class="container clearfix" >
 
 						<div class="row">
 
 							<div class="col-md-6" style="text-align: left">
-						<h2>TEAMVOLVER IS A PLATFORM...</h2>
+						<h2 class="double-pica">TEAMVOLVER IS A PLATFORM...</h2>
 								
-						<p>FOR CREATING TEAMS THAT DEVELOPE PROJECTS</p>
+						<p class="spaced">FOR CREATING TEAMS THAT DEVELOPE PROJECTS</p>
 
 						<P>
 						If you have any idea for a new project or want to be a member of an existing one, please sign in for free and start your journey.
@@ -186,6 +186,13 @@
 						</div>
 
 					<div class="clear"></div>
+					</div>	
+				</div>
+
+				<div id="section-about" class="center page-section">
+
+					<div class="container clearfix" style="background:url('/assets/img/hexagon-bg.png')">
+
 
 
 
