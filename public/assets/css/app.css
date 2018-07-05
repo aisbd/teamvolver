@@ -11260,6 +11260,17 @@ p {
   color: #666;
 }
 
+.breadcrumb {
+  position: static !important;
+  /* width: auto !important; */
+  /* left: auto !important; */
+  /* right: 15px !important; */
+  margin: 0 0 0 0 !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  font-size: 12px;
+}
+
 @media (max-width: 991.98px) {
   .sidebar:not(.expanded) {
     margin-left: -250px;

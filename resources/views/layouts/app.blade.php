@@ -18,8 +18,13 @@
     <meta name="msapplication-TileColor" content="#FFFFFF" />
     <meta name="msapplication-TileImage" content="{{ url('assets/img/icons/mstile-144x144.png') }}" />
 
+
+    <link media="all" type="text/css" rel="stylesheet" href="/assets/theme/style.css">
+
     <link media="all" type="text/css" rel="stylesheet" href="{{ mix('assets/css/vendor.css') }}">
     <link media="all" type="text/css" rel="stylesheet" href="{{ mix('assets/css/app.css') }}">
+
+    <link media="all" type="text/css" rel="stylesheet" href="/assets/theme/custom.css">
 
     @yield('styles')
 </head>

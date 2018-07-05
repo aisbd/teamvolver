@@ -1,5 +1,5 @@
 <nav class="navbar fixed-top align-items-start navbar-expand-lg pl-0 pr-0 py-0"  >
-    <div style=" position:absolute ; background-image: url(/theme/one-page/images/page/banner.jpg);  width:100%; height:70px; opacity:.5; background-position:center     ">
+    <div style=" position:absolute ; background-image: url(/assets/theme/one-page/images/page/banner.jpg);  width:100%; height:70px; opacity:.5; background-position:center     ">
 
     </div>
     <div class="navbar-brand-wrapper d-flex align-items-center ">
