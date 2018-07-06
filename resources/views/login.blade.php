@@ -1,4 +1,4 @@
- <div class="row login" id="login-form" style="display:none; margin:auto; max-width:400px">
+ <div class="row login " id="login-form" style="display:none; margin:auto;">
      
  <div class="col-md-12 login-head" >
             <h5 class="card-title text-center mt-4 text-uppercase">

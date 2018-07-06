@@ -1,0 +1,32 @@
+    #login{
+        background: #fff;
+    }
+    .login-head{
+        background: $primary;
+        h5{
+            color:#fff;
+        }
+    }
+    .tab-content{
+        width:100%;
+    }
+
+   .double-pica{
+       font-family: 'IM Fell Double Pica', serif !important;
+   }
+   .spaced{
+       letter-spacing: 5px;
+   }
+   p{
+       color:#666;
+   }
+   .breadcrumb {
+    position: static !important; 
+    /* width: auto !important; */
+    /* left: auto !important; */
+    /* right: 15px !important; */
+    margin: 0 0 0 0 !important; 
+    background-color: transparent !important;
+    padding: 0 !important;
+    font-size: 12px;
+}

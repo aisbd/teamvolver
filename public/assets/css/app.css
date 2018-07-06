@@ -10528,6 +10528,10 @@ label {
   color: #cf3426;
 }
 
+.btn-transparent {
+  background: rgba(255, 193, 7, 0.4);
+}
+
 .avatar-source {
   text-align: center;
 }
@@ -11269,6 +11273,51 @@ p {
   background-color: transparent !important;
   padding: 0 !important;
   font-size: 12px;
+}
+
+.process-steps li .i-bordered:not(.active) {
+  background: #0000 !important;
+  border: 1px solid #fff !important;
+  color: #fff !important;
+}
+
+.process-steps li {
+  background: #0000 !important;
+}
+
+.i-rounded:hover,
+.i-circled:hover {
+  text-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+body:not(.device-touch) .i-rounded,
+body:not(.device-touch) .i-plain,
+body:not(.device-touch) .i-circled,
+body:not(.device-touch) .i-bordered,
+body:not(.device-touch) .social-icon {
+  -webkit-transition: none;
+  transition: none;
+}
+
+.custom-control-label::before {
+  background: #0000;
+  border: 2px solid #ffc107;
+}
+
+.float-left .col-md-3 {
+  float: left;
+  padding: 0;
+}
+
+.modal-content {
+  border-radius: 0 !important;
+  background: none;
+}
+
+.modal-body {
+  padding: 0 !important;
 }
 
 @media (max-width: 991.98px) {

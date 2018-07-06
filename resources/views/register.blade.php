@@ -25,19 +25,19 @@
 									<form action="">
 										<div class="form-group">
 											<label for="fullname">Full Name</label>
-											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Enter Full Name">
+											<input type="text" name="fullname"  class="form-control" placeholder="Enter Full Name">
 										</div>
 										<div class="form-group">
 											<label for="fullname">Email</label>
-											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Example: someone@example.com">
+											<input type="text" name="fullname"  class="form-control" placeholder="Example: someone@example.com">
 										</div>
 										<div class="form-group">
 											<label for="fullname">Password</label>
-											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Atleast 6 digits">
+											<input type="text" name="fullname"  class="form-control" placeholder="Atleast 6 digits">
 										</div>
 										<div class="form-group">
 											<label for="fullname">Where you live</label>
-											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Example: New York, US">
+											<input type="text" name="fullname"  class="form-control" placeholder="Example: New York, US">
 										</div>
 										<button class="button button-circle primary">Sign up</button>
 										<div style="float: right;text-align: right">
@@ -60,19 +60,19 @@
 									<form action="">
 										<div class="form-group">
 											<label for="fullname">Full Name</label>
-											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Enter Full Name">
+											<input type="text" name="fullname"  class="form-control" placeholder="Enter Full Name">
 										</div>
 										<div class="form-group">
 											<label for="fullname">Email</label>
-											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Example: someone@example.com">
+											<input type="text" name="fullname"  class="form-control" placeholder="Example: someone@example.com">
 										</div>
 										<div class="form-group">
 											<label for="fullname">Password</label>
-											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Atleast 6 digits">
+											<input type="text" name="fullname"  class="form-control" placeholder="Atleast 6 digits">
 										</div>
 										<div class="form-group">
 											<label for="fullname">Where you live</label>
-											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Example: New York, US">
+											<input type="text" name="fullname"  class="form-control" placeholder="Example: New York, US">
 										</div>
 										<button class="button button-circle primary">Sign up</button>
 										<div style="float: right;text-align: right">

@@ -30,3 +30,37 @@
     padding: 0 !important;
     font-size: 12px;
 }
+
+
+.process-steps li .i-bordered:not(.active){
+        background: #0000 !important;
+    border: 1px solid #fff !important;
+    color:#fff !important;
+}
+.process-steps li {
+         background: #0000 !important; 
+}
+.i-rounded:hover, .i-circled:hover{
+    text-shadow: none;
+    box-shadow: none;
+}
+body:not(.device-touch) .i-rounded, body:not(.device-touch) .i-plain, body:not(.device-touch) .i-circled, body:not(.device-touch) .i-bordered, body:not(.device-touch) .social-icon{
+    transition: none;
+}
+
+.custom-control-label::before{
+    background: #0000;
+    border: 2px solid $primary;
+}
+.float-left .col-md-3{          
+    float: left;
+    padding: 0;
+}
+
+.modal-content{
+    border-radius:0 !important;
+    background:none;
+}
+.modal-body{
+    padding:0 !important;
+}

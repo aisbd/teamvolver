@@ -1,5 +1,5 @@
 let mix = require('laravel-mix');
-
+// require('vue2-animate/dist/vue2-animate.min.css')
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -19,10 +19,10 @@ mix.scripts([
     'public/assets/js/sweetalert.min.js',
     'public/assets/js/delete.handler.js',
     'public/assets/plugins/js-cookie/js.cookie.js',
-    'public/vendor/jsvalidation/js/jsvalidation.js',
+    // 'public/vendor/jsvalidation/js/jsvalidation.js',
     'public/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js',
     'public/assets/plugins/croppie/croppie.js',
-    'resources/assets/js/app.js'
+
 ], 'public/assets/js/vendor.js');
 
 mix.js([

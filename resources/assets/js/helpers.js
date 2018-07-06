@@ -7,4 +7,9 @@ $(document).ready(function () {
         $('#login-form').hide();
         $('#register-form').show();
     })
+
+    $('a[data-href="#login"]').click(function () {
+        $('#loginModal').modal();
+    })
+
 })

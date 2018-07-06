@@ -2,8 +2,14 @@
     <div class="sidebar-sticky">
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a data-toggle="tooltip" data-placement="bottom" title="@lang('app.dashboard')" class="nav-link {{ Request::is('/') ? 'active' : ''  }}" href="{{ route('dashboard') }}">
-                    <i class="fas fa-home"></i>
+                <a data-toggle="tooltip" data-placement="bottom" title="Form Team" class="nav-link {{ Request::is('/') ? 'active' : ''  }}" href="{{ route('dashboard') }}">
+                    <i class="fas fa-users"></i>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a data-toggle="tooltip" data-placement="bottom" title="Form Team" class="nav-link {{ Request::is('/form') ? 'active' : ''  }}" href="{{ route('dashboard') }}">
+                    <i class="fas fa-chart"></i>
                 </a>
             </li>
 

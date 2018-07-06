@@ -47,20 +47,33 @@
 
 <body class="stretched" >
 
-<div class="modal-on-load" data-target="#myModal1"></div>
+
 
 <!-- Modal -->
-<div class="modal1 mfp-hide popup" id="myModal1"  style="max-width: 900px; margin:auto">
+<div class="modal1 mfp-hide popup" style="max-width: 900px; margin:auto">
 	<div class="block divcenter" >
+
+
+	</div>
+</div>
+<div id="loginModal" class="modal fade popup" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+
+      <div class="modal-body block divcenter">
+
 
 		@include('register')
 		@include('login')
 
+      </div>
 
-		
-	</div>
+    </div>
+
+  </div>
 </div>
-
 	<div class="body-overlay"></div>
 
 	<!-- Document Wrapper
@@ -95,6 +108,7 @@
 							<li><a href="#" data-href="#section-services"><div>Projects</div></a></li>
 							<li><a href="#" data-href="#section-blog"><div>Services</div></a></li>
 							<li><a href="#" data-href="#section-contact"><div>About Us</div></a></li>
+							<li><a href="#" data-href="#login"><div>Login</div></a></li>
 						</ul>
 
 					</nav><!-- #primary-menu end -->
