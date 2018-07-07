@@ -48,13 +48,13 @@
                                                     <form action="">
                                                         <div class="form-group">
                                                             <label for="fullname">Select Category</label>
-                                                            <select name="" id="" class="form-control">	
+                                                            <select class="form-control">	
                                                                 <option value="">Web Developement</option>
                                                             </select>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="fullname">Tell us about your idea?</label>
-                                                            <textarea class="form-control bordered" name="" id="" cols="30" rows="10" placeholder="Write about your idea here..."></textarea>
+                                                            <textarea class="form-control bordered" cols="30" rows="10" placeholder="Write about your idea here..."></textarea>
                                                         </div>
                                                 
                                                 

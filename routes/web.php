@@ -371,3 +371,7 @@ $router->get('install/error', [
     'as' => 'install.error',
     'uses' => 'InstallController@error'
 ]);
+
+
+// new routes
+Route::get('/projects', 'ProjectController@index');

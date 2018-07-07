@@ -64,3 +64,44 @@ body:not(.device-touch) .i-rounded, body:not(.device-touch) .i-plain, body:not(.
 .modal-body{
     padding:0 !important;
 }
+.no-radius{
+     border-radius:0px !important;
+}
+
+.btn-primary.transparent{
+    background: rgba($primary, .3) !important;
+
+}
+.uppercase{
+    text-transform: uppercase;
+}
+.margin-bottom-20{
+    margin-bottom:20px !important;
+}
+.sticky-header .not-dark{
+    background: url('/assets/theme/one-page/images/page/banner.jpg') !important; 
+}
+.sticky-header .not-dark .container{
+    background:rgba($color: #000000, $alpha: .7)
+}
+
+.sticky-header .not-dark .container #primary-menu ul li > a{
+    color:#fff;
+}
+::selection {
+    background:$primary;
+    color: #FFF;
+    text-shadow: none;
+}
+@media only screen and (min-width: 500px) {
+    .become-igniter{
+        margin-right:30px !important;
+    }
+}
+
+.portfolio-filter li.activeFilter a{
+    background-color: $primary;
+}
+.portfolio-filter li a:hover{
+    color:$primary;
+}

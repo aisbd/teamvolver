@@ -11320,6 +11320,60 @@ body:not(.device-touch) .social-icon {
   padding: 0 !important;
 }
 
+.no-radius {
+  border-radius: 0px !important;
+}
+
+.btn-primary.transparent {
+  background: rgba(255, 193, 7, 0.3) !important;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.margin-bottom-20 {
+  margin-bottom: 20px !important;
+}
+
+.sticky-header .not-dark {
+  background: url("/assets/theme/one-page/images/page/banner.jpg") !important;
+}
+
+.sticky-header .not-dark .container {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.sticky-header .not-dark .container #primary-menu ul li > a {
+  color: #fff;
+}
+
+::-moz-selection {
+  background: #ffc107;
+  color: #FFF;
+  text-shadow: none;
+}
+
+::selection {
+  background: #ffc107;
+  color: #FFF;
+  text-shadow: none;
+}
+
+@media only screen and (min-width: 500px) {
+  .become-igniter {
+    margin-right: 30px !important;
+  }
+}
+
+.portfolio-filter li.activeFilter a {
+  background-color: #ffc107;
+}
+
+.portfolio-filter li a:hover {
+  color: #ffc107;
+}
+
 @media (max-width: 991.98px) {
   .sidebar:not(.expanded) {
     margin-left: -250px;

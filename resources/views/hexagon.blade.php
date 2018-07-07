@@ -157,6 +157,10 @@
 			.append('use')
 			.attr('xlink:href', d => `#${d.id}`);
 
+		// custom
+
+		// custom
+
 		// display text as circle icon
 		node.filter(d => !String(d.icon).includes('/d3/img/'))
 			.append('text')
@@ -183,6 +187,7 @@
 
 		node.append('title')
 			.text(d => (d.cat + '::' + d.name + '\n' + format(d.value)));
+
 
 		// let legendOrdinal = d3.legendColor()
 		// 	.scale(scaleColor)

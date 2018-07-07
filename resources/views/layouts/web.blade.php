@@ -41,7 +41,7 @@
 	<!-- Document Title
     ============================================= -->
     
-    <title>@yield('page-title') - {{ settings('app_name') }}</title>
+    <title>@yield('page-title')  {{ settings('app_name') }}</title>
 
 </head>
 
@@ -103,9 +103,9 @@
 
 						<ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
 							<li><a href="#" data-href="#wrapper"><div>Home</div></a></li>
-							<li><a href="#" data-href="#team-igniter" data-offset="150"><div>Team Igniter</div></a></li>
+							<li><a href="#" data-href="#team-igniter" data-offset="165"><div>Team Igniter</div></a></li>
 							<li><a href="#" data-href="#team-member" data-offset="165"><div>Team member</div></a></li>
-							<li><a href="#" data-href="#projects"><div>Projects</div></a></li>
+							<li><a href="#" data-href="#section-services"><div>Projects</div></a></li>
 							<li><a href="#" data-href="#section-blog"><div>Services</div></a></li>
 							<li><a href="#" data-href="#section-contact"><div>About Us</div></a></li>
 							<li><a href="#" data-href="#login"><div>Login</div></a></li>
@@ -428,13 +428,7 @@
 
 		</section><!-- #content end -->
 
-<section >
-	<div class="container-fluid" id="app">
-	<projects></projects>
 
-								{{-- @include('projectHexagon') --}}
-	</div>
-</section>
 
 		<!-- Footer
 		============================================= -->
@@ -517,11 +511,10 @@
 	<!-- Go To Top
 	============================================= -->
 	<div id="gotoTop" class="icon-angle-up"></div>
+<script src="/assets/js/app.js"></script>
 	<!-- External JavaScripts
 		
-
 	============================================= -->
-	<script src="/assets/js/app.js"></script>>
 	<script src="/assets/theme/js/jquery.js"></script>
 	<script src="/assets/theme/js/plugins.js"></script>
 

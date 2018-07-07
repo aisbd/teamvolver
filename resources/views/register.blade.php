@@ -42,7 +42,7 @@
 										<button class="button button-circle primary">Sign up</button>
 										<div style="float: right;text-align: right">
 											<span class="italic">Already a Member?</span> <br>
-											<u><a id="login-btn"  href="#">LOGIN</a></u>
+											<u><a class="loginButton"  href="#">LOGIN</a></u>
 											
 										</div>
 									</form>
@@ -77,7 +77,7 @@
 										<button class="button button-circle primary">Sign up</button>
 										<div style="float: right;text-align: right">
 											<span class="italic">Already a Member?</span> <br>
-											<u><a  href="#">LOGIN</a></u>
+											<u><a class="loginButton"  href="#">LOGIN</a></u>
 											
 										</div>
 									</form>

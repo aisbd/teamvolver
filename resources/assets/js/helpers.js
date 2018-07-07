@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('#login-btn').click(function () {
+    $('.loginButton').click(function () {
         $('#login-form').show();
         $('#register-form').hide();
     })
@@ -9,7 +9,21 @@ $(document).ready(function () {
     })
 
     $('a[data-href="#login"]').click(function () {
+
+        $('.loginButton').trigger('click')
         $('#loginModal').modal();
+    })
+
+    $('.become-igniter').click(()=>{
+        $("#register-btn").trigger('click')
+        $('#loginModal').modal()
+        $('[href="#tab-1"]').trigger('click')
+    })
+
+    $('.become-member').click(() => {
+        $("#register-btn").trigger('click')
+        $('#loginModal').modal()
+        $('[href="#tab-3"]').trigger('click')
     })
 
 })

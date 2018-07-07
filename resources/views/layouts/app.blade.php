@@ -44,7 +44,7 @@
     </div>
 
     <script src="{{ mix('assets/js/vendor.js') }}"></script>
-    <script src="{{ mix('assets/js/as/app.js') }}"></script>
+    <script src="'assets/js/as/app.js'"></script>
     <script src="{{ mix('assets/js/app.js') }}"></script>
     @yield('scripts')
 </body>

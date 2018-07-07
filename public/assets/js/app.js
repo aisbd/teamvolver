@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 11);
+/******/ 	return __webpack_require__(__webpack_require__.s = 12);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -71,7 +71,7 @@
 
 
 var bind = __webpack_require__(5);
-var isBuffer = __webpack_require__(19);
+var isBuffer = __webpack_require__(20);
 
 /*global toString:true*/
 
@@ -408,7 +408,7 @@ module.exports = g;
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(0);
-var normalizeHeaderName = __webpack_require__(21);
+var normalizeHeaderName = __webpack_require__(22);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -13620,12 +13620,12 @@ process.umask = function() { return 0; };
 
 
 var utils = __webpack_require__(0);
-var settle = __webpack_require__(22);
-var buildURL = __webpack_require__(24);
-var parseHeaders = __webpack_require__(25);
-var isURLSameOrigin = __webpack_require__(26);
+var settle = __webpack_require__(23);
+var buildURL = __webpack_require__(25);
+var parseHeaders = __webpack_require__(26);
+var isURLSameOrigin = __webpack_require__(27);
 var createError = __webpack_require__(8);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(27);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(28);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -13722,7 +13722,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(28);
+      var cookies = __webpack_require__(29);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -13806,7 +13806,7 @@ module.exports = function xhrAdapter(config) {
 "use strict";
 
 
-var enhanceError = __webpack_require__(23);
+var enhanceError = __webpack_require__(24);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -13864,14 +13864,123 @@ module.exports = Cancel;
 
 /***/ }),
 /* 11 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-__webpack_require__(12);
-module.exports = __webpack_require__(49);
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file.
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+module.exports = function normalizeComponent (
+  rawScriptExports,
+  compiledTemplate,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier /* server only */
+) {
+  var esModule
+  var scriptExports = rawScriptExports = rawScriptExports || {}
+
+  // ES6 modules interop
+  var type = typeof rawScriptExports.default
+  if (type === 'object' || type === 'function') {
+    esModule = rawScriptExports
+    scriptExports = rawScriptExports.default
+  }
+
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (compiledTemplate) {
+    options.render = compiledTemplate.render
+    options.staticRenderFns = compiledTemplate.staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = injectStyles
+  }
+
+  if (hook) {
+    var functional = options.functional
+    var existing = functional
+      ? options.render
+      : options.beforeCreate
+
+    if (!functional) {
+      // inject component registration as beforeCreate hook
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    } else {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return existing(h, context)
+      }
+    }
+  }
+
+  return {
+    esModule: esModule,
+    exports: scriptExports,
+    options: options
+  }
+}
 
 
 /***/ }),
 /* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(13);
+module.exports = __webpack_require__(52);
+
+
+/***/ }),
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -13881,12 +13990,13 @@ module.exports = __webpack_require__(49);
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-__webpack_require__(13);
-__webpack_require__(36);
-
+__webpack_require__(14);
 __webpack_require__(37);
-window.Vue = __webpack_require__(42);
-Vue.component('form-team', __webpack_require__(45));
+
+__webpack_require__(38);
+window.Vue = __webpack_require__(43);
+Vue.component('form-team', __webpack_require__(46));
+Vue.component('projects', __webpack_require__(49));
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -13900,11 +14010,11 @@ if (document.querySelector('#app')) {
 }
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-window._ = __webpack_require__(14);
+window._ = __webpack_require__(15);
 window.Popper = __webpack_require__(3).default;
 
 /**
@@ -13916,7 +14026,7 @@ window.Popper = __webpack_require__(3).default;
 try {
   window.$ = window.jQuery = __webpack_require__(4);
 
-  __webpack_require__(16);
+  __webpack_require__(17);
 } catch (e) {}
 
 /**
@@ -13925,7 +14035,7 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(17);
+window.axios = __webpack_require__(18);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -13961,7 +14071,7 @@ if (token) {
 // });
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -31071,10 +31181,10 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(15)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(16)(module)))
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -31102,7 +31212,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -35035,13 +35145,13 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(18);
+module.exports = __webpack_require__(19);
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35049,7 +35159,7 @@ module.exports = __webpack_require__(18);
 
 var utils = __webpack_require__(0);
 var bind = __webpack_require__(5);
-var Axios = __webpack_require__(20);
+var Axios = __webpack_require__(21);
 var defaults = __webpack_require__(2);
 
 /**
@@ -35084,14 +35194,14 @@ axios.create = function create(instanceConfig) {
 
 // Expose Cancel & CancelToken
 axios.Cancel = __webpack_require__(10);
-axios.CancelToken = __webpack_require__(34);
+axios.CancelToken = __webpack_require__(35);
 axios.isCancel = __webpack_require__(9);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(35);
+axios.spread = __webpack_require__(36);
 
 module.exports = axios;
 
@@ -35100,7 +35210,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports) {
 
 /*!
@@ -35127,7 +35237,7 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35135,8 +35245,8 @@ function isSlowBuffer (obj) {
 
 var defaults = __webpack_require__(2);
 var utils = __webpack_require__(0);
-var InterceptorManager = __webpack_require__(29);
-var dispatchRequest = __webpack_require__(30);
+var InterceptorManager = __webpack_require__(30);
+var dispatchRequest = __webpack_require__(31);
 
 /**
  * Create a new instance of Axios
@@ -35213,7 +35323,7 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35232,7 +35342,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35265,7 +35375,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35293,7 +35403,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35366,7 +35476,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35426,7 +35536,7 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35501,7 +35611,7 @@ module.exports = (
 
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35544,7 +35654,7 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35604,7 +35714,7 @@ module.exports = (
 
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35663,18 +35773,18 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(0);
-var transformData = __webpack_require__(31);
+var transformData = __webpack_require__(32);
 var isCancel = __webpack_require__(9);
 var defaults = __webpack_require__(2);
-var isAbsoluteURL = __webpack_require__(32);
-var combineURLs = __webpack_require__(33);
+var isAbsoluteURL = __webpack_require__(33);
+var combineURLs = __webpack_require__(34);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -35756,7 +35866,7 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35783,7 +35893,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35804,7 +35914,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35825,7 +35935,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35889,7 +35999,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35923,11 +36033,11 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
-    $('#login-btn').click(function () {
+    $('.loginButton').click(function () {
         $('#login-form').show();
         $('#register-form').hide();
     });
@@ -35937,18 +36047,32 @@ $(document).ready(function () {
     });
 
     $('a[data-href="#login"]').click(function () {
+
+        $('.loginButton').trigger('click');
         $('#loginModal').modal();
+    });
+
+    $('.become-igniter').click(function () {
+        $("#register-btn").trigger('click');
+        $('#loginModal').modal();
+        $('[href="#tab-1"]').trigger('click');
+    });
+
+    $('.become-member').click(function () {
+        $("#register-btn").trigger('click');
+        $('#loginModal').modal();
+        $('[href="#tab-3"]').trigger('click');
     });
 });
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(38);
+var content = __webpack_require__(39);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -35956,7 +36080,7 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(40)(content, options);
+var update = __webpack_require__(41)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -35973,10 +36097,10 @@ if(false) {
 }
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(39)(false);
+exports = module.exports = __webpack_require__(40)(false);
 // imports
 
 
@@ -35987,7 +36111,7 @@ exports.push([module.i, "/*!\r\n * vue2-animate\r\n * (c) 2018 Pavel Savushkin\r
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports) {
 
 /*
@@ -36069,7 +36193,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -36115,7 +36239,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(41);
+var	fixUrls = __webpack_require__(42);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -36428,7 +36552,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports) {
 
 
@@ -36523,7 +36647,7 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47486,10 +47610,10 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(43).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(44).setImmediate))
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
@@ -47545,7 +47669,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(44);
+__webpack_require__(45);
 // On some exotic environments, it's not clear which object `setimmediate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -47559,7 +47683,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -47752,11 +47876,11 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(6)))
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(46)
+var normalizeComponent = __webpack_require__(11)
 /* script */
 var __vue_script__ = __webpack_require__(47)
 /* template */
@@ -47796,115 +47920,6 @@ if (false) {(function () {
 })()}
 
 module.exports = Component.exports
-
-
-/***/ }),
-/* 46 */
-/***/ (function(module, exports) {
-
-/* globals __VUE_SSR_CONTEXT__ */
-
-// IMPORTANT: Do NOT use ES2015 features in this file.
-// This module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle.
-
-module.exports = function normalizeComponent (
-  rawScriptExports,
-  compiledTemplate,
-  functionalTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier /* server only */
-) {
-  var esModule
-  var scriptExports = rawScriptExports = rawScriptExports || {}
-
-  // ES6 modules interop
-  var type = typeof rawScriptExports.default
-  if (type === 'object' || type === 'function') {
-    esModule = rawScriptExports
-    scriptExports = rawScriptExports.default
-  }
-
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (compiledTemplate) {
-    options.render = compiledTemplate.render
-    options.staticRenderFns = compiledTemplate.staticRenderFns
-    options._compiled = true
-  }
-
-  // functional template
-  if (functionalTemplate) {
-    options.functional = true
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = injectStyles
-  }
-
-  if (hook) {
-    var functional = options.functional
-    var existing = functional
-      ? options.render
-      : options.beforeCreate
-
-    if (!functional) {
-      // inject component registration as beforeCreate hook
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    } else {
-      // for template-only hot-reload because in that case the render fn doesn't
-      // go through the normalizer
-      options._injectStyles = hook
-      // register for functioal component in vue file
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return existing(h, context)
-      }
-    }
-  }
-
-  return {
-    esModule: esModule,
-    exports: scriptExports,
-    options: options
-  }
-}
 
 
 /***/ }),
@@ -48216,18 +48231,11 @@ var render = function() {
                                   _vm._v("Select Category")
                                 ]),
                                 _vm._v(" "),
-                                _c(
-                                  "select",
-                                  {
-                                    staticClass: "form-control",
-                                    attrs: { name: "", id: "" }
-                                  },
-                                  [
-                                    _c("option", { attrs: { value: "" } }, [
-                                      _vm._v("Web Developement")
-                                    ])
-                                  ]
-                                )
+                                _c("select", { staticClass: "form-control" }, [
+                                  _c("option", { attrs: { value: "" } }, [
+                                    _vm._v("Web Developement")
+                                  ])
+                                ])
                               ]),
                               _vm._v(" "),
                               _c("div", { staticClass: "form-group" }, [
@@ -48238,8 +48246,6 @@ var render = function() {
                                 _c("textarea", {
                                   staticClass: "form-control bordered",
                                   attrs: {
-                                    name: "",
-                                    id: "",
                                     cols: "30",
                                     rows: "10",
                                     placeholder: "Write about your idea here..."
@@ -48585,6 +48591,840 @@ if (false) {
 
 /***/ }),
 /* 49 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(11)
+/* script */
+var __vue_script__ = __webpack_require__(50)
+/* template */
+var __vue_template__ = __webpack_require__(51)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Projects.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2290c4b1", Component.options)
+  } else {
+    hotAPI.reload("data-v-2290c4b1", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 50 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+/* 51 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c(
+        "div",
+        {
+          staticClass: "col-md-12",
+          staticStyle: { background: "#fff", "margin-bottom": "30px" },
+          attrs: { id: "projects" }
+        },
+        [
+          _c("h3", { staticClass: "center uppercase" }, [_vm._v("Projects")]),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticStyle: {
+                width: "100%",
+                "text-align": "center",
+                display: "inline-block"
+              }
+            },
+            [
+              _c(
+                "ul",
+                {
+                  staticClass: "portfolio-filter clearfix",
+                  staticStyle: { float: "none", display: "inline-block" },
+                  attrs: { "data-container": "#portfolio" }
+                },
+                [
+                  _c("li", { staticClass: "activeFilter" }, [
+                    _c("a", { attrs: { href: "#", "data-filter": "*" } }, [
+                      _vm._v("Show All")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "#", "data-filter": ".pf-Description" }
+                      },
+                      [_vm._v("Category")]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "#", "data-filter": ".pf-illustrations" }
+                      },
+                      [_vm._v("Category")]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c(
+                      "a",
+                      { attrs: { href: "#", "data-filter": ".pf-uielements" } },
+                      [_vm._v("UI Category")]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c(
+                      "a",
+                      { attrs: { href: "#", "data-filter": ".pf-Short" } },
+                      [_vm._v("Category")]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c(
+                      "a",
+                      { attrs: { href: "#", "data-filter": ".pf-graphics" } },
+                      [_vm._v("Graphics")]
+                    )
+                  ])
+                ]
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "portfolio grid-container clearfix",
+              attrs: { id: "portfolio" }
+            },
+            [
+              _c(
+                "article",
+                { staticClass: "portfolio-item pf-Short pf-Description " },
+                [
+                  _c("div", { staticClass: "portfolio-image" }, [
+                    _c("a", { attrs: { href: "portfolio-single.html" } }, [
+                      _c("img", {
+                        attrs: {
+                          src: "/assets/theme/one-page/images/page/banner.jpg",
+                          alt: "Project Title"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "portfolio-overlay" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "left-icon",
+                          attrs: {
+                            href:
+                              "/assets/theme/one-page/images/page/banner.jpg",
+                            "data-lightbox": "image"
+                          }
+                        },
+                        [_c("i", { staticClass: "icon-line-plus" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "right-icon",
+                          attrs: { href: "portfolio-single.html" }
+                        },
+                        [_c("i", { staticClass: "icon-line-ellipsis" })]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "portfolio-desc" }, [
+                    _c("h3", [
+                      _c("a", { attrs: { href: "portfolio-single.html" } }, [
+                        _vm._v("Project Title")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("span", [
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Short")]),
+                      _vm._v(" "),
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Description")])
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "article",
+                { staticClass: "portfolio-item pf-Short pf-Description" },
+                [
+                  _c("div", { staticClass: "portfolio-image" }, [
+                    _c("a", { attrs: { href: "portfolio-single.html" } }, [
+                      _c("img", {
+                        attrs: {
+                          src: "/assets/theme/one-page/images/page/banner.jpg",
+                          alt: "Project Title"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "portfolio-overlay" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "left-icon",
+                          attrs: {
+                            href: "images/portfolio/full/1.jpg",
+                            "data-lightbox": "image"
+                          }
+                        },
+                        [_c("i", { staticClass: "icon-line-plus" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "right-icon",
+                          attrs: { href: "portfolio-single.html" }
+                        },
+                        [_c("i", { staticClass: "icon-line-ellipsis" })]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "portfolio-desc" }, [
+                    _c("h3", [
+                      _c("a", { attrs: { href: "portfolio-single.html" } }, [
+                        _vm._v("Project Title")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("span", [
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Short")]),
+                      _vm._v(" "),
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Description")])
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "article",
+                { staticClass: "portfolio-item pf-Short pf-Description" },
+                [
+                  _c("div", { staticClass: "portfolio-image" }, [
+                    _c("a", { attrs: { href: "portfolio-single.html" } }, [
+                      _c("img", {
+                        attrs: {
+                          src: "/assets/theme/one-page/images/page/banner.jpg",
+                          alt: "Project Title"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "portfolio-overlay" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "left-icon",
+                          attrs: {
+                            href: "images/portfolio/full/1.jpg",
+                            "data-lightbox": "image"
+                          }
+                        },
+                        [_c("i", { staticClass: "icon-line-plus" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "right-icon",
+                          attrs: { href: "portfolio-single.html" }
+                        },
+                        [_c("i", { staticClass: "icon-line-ellipsis" })]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "portfolio-desc" }, [
+                    _c("h3", [
+                      _c("a", { attrs: { href: "portfolio-single.html" } }, [
+                        _vm._v("Project Title")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("span", [
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Short")]),
+                      _vm._v(" "),
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Description")])
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "article",
+                { staticClass: "portfolio-item pf-Short pf-Description" },
+                [
+                  _c("div", { staticClass: "portfolio-image" }, [
+                    _c("a", { attrs: { href: "portfolio-single.html" } }, [
+                      _c("img", {
+                        attrs: {
+                          src: "/assets/theme/one-page/images/page/banner.jpg",
+                          alt: "Project Title"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "portfolio-overlay" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "left-icon",
+                          attrs: {
+                            href: "images/portfolio/full/1.jpg",
+                            "data-lightbox": "image"
+                          }
+                        },
+                        [_c("i", { staticClass: "icon-line-plus" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "right-icon",
+                          attrs: { href: "portfolio-single.html" }
+                        },
+                        [_c("i", { staticClass: "icon-line-ellipsis" })]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "portfolio-desc" }, [
+                    _c("h3", [
+                      _c("a", { attrs: { href: "portfolio-single.html" } }, [
+                        _vm._v("Project Title")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("span", [
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Short")]),
+                      _vm._v(" "),
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Description")])
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "article",
+                { staticClass: "portfolio-item pf-Short pf-Description" },
+                [
+                  _c("div", { staticClass: "portfolio-image" }, [
+                    _c("a", { attrs: { href: "portfolio-single.html" } }, [
+                      _c("img", {
+                        attrs: {
+                          src: "/assets/theme/one-page/images/page/banner.jpg",
+                          alt: "Project Title"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "portfolio-overlay" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "left-icon",
+                          attrs: {
+                            href: "images/portfolio/full/1.jpg",
+                            "data-lightbox": "image"
+                          }
+                        },
+                        [_c("i", { staticClass: "icon-line-plus" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "right-icon",
+                          attrs: { href: "portfolio-single.html" }
+                        },
+                        [_c("i", { staticClass: "icon-line-ellipsis" })]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "portfolio-desc" }, [
+                    _c("h3", [
+                      _c("a", { attrs: { href: "portfolio-single.html" } }, [
+                        _vm._v("Project Title")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("span", [
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Short")]),
+                      _vm._v(" "),
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Description")])
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "article",
+                { staticClass: "portfolio-item pf-Short pf-Description" },
+                [
+                  _c("div", { staticClass: "portfolio-image" }, [
+                    _c("a", { attrs: { href: "portfolio-single.html" } }, [
+                      _c("img", {
+                        attrs: {
+                          src: "/assets/theme/one-page/images/page/banner.jpg",
+                          alt: "Project Title"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "portfolio-overlay" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "left-icon",
+                          attrs: {
+                            href: "images/portfolio/full/1.jpg",
+                            "data-lightbox": "image"
+                          }
+                        },
+                        [_c("i", { staticClass: "icon-line-plus" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "right-icon",
+                          attrs: { href: "portfolio-single.html" }
+                        },
+                        [_c("i", { staticClass: "icon-line-ellipsis" })]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "portfolio-desc" }, [
+                    _c("h3", [
+                      _c("a", { attrs: { href: "portfolio-single.html" } }, [
+                        _vm._v("Project Title")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("span", [
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Short")]),
+                      _vm._v(" "),
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Description")])
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "article",
+                { staticClass: "portfolio-item pf-Short pf-Description" },
+                [
+                  _c("div", { staticClass: "portfolio-image" }, [
+                    _c("a", { attrs: { href: "portfolio-single.html" } }, [
+                      _c("img", {
+                        attrs: {
+                          src: "/assets/theme/one-page/images/page/banner.jpg",
+                          alt: "Project Title"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "portfolio-overlay" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "left-icon",
+                          attrs: {
+                            href: "images/portfolio/full/1.jpg",
+                            "data-lightbox": "image"
+                          }
+                        },
+                        [_c("i", { staticClass: "icon-line-plus" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "right-icon",
+                          attrs: { href: "portfolio-single.html" }
+                        },
+                        [_c("i", { staticClass: "icon-line-ellipsis" })]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "portfolio-desc" }, [
+                    _c("h3", [
+                      _c("a", { attrs: { href: "portfolio-single.html" } }, [
+                        _vm._v("Project Title")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("span", [
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Short")]),
+                      _vm._v(" "),
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Description")])
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "article",
+                { staticClass: "portfolio-item pf-Short pf-Description" },
+                [
+                  _c("div", { staticClass: "portfolio-image" }, [
+                    _c("a", { attrs: { href: "portfolio-single.html" } }, [
+                      _c("img", {
+                        attrs: {
+                          src: "/assets/theme/one-page/images/page/banner.jpg",
+                          alt: "Project Title"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "portfolio-overlay" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "left-icon",
+                          attrs: {
+                            href: "images/portfolio/full/1.jpg",
+                            "data-lightbox": "image"
+                          }
+                        },
+                        [_c("i", { staticClass: "icon-line-plus" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "right-icon",
+                          attrs: { href: "portfolio-single.html" }
+                        },
+                        [_c("i", { staticClass: "icon-line-ellipsis" })]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "portfolio-desc" }, [
+                    _c("h3", [
+                      _c("a", { attrs: { href: "portfolio-single.html" } }, [
+                        _vm._v("Project Title")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("span", [
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Short")]),
+                      _vm._v(" "),
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Description")])
+                    ])
+                  ])
+                ]
+              )
+            ]
+          )
+        ]
+      )
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-2290c4b1", module.exports)
+  }
+}
+
+/***/ }),
+/* 52 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
