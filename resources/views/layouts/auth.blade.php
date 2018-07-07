@@ -106,9 +106,9 @@
 							<li><a href="#" data-href="#team-igniter" data-offset="150"><div>Team Igniter</div></a></li>
 							<li><a href="#" data-href="#team-member" data-offset="165"><div>Team member</div></a></li>
 							<li><a href="#" data-href="#projects"><div>Projects</div></a></li>
-							<li><a href="#" data-href="#section-blog"><div>Services</div></a></li>
-							<li><a href="#" data-href="#section-contact"><div>About Us</div></a></li>
-							<li><a href="#" data-href="#login"><div>Login</div></a></li>
+							<li><a href="#" data-href="#services"><div>Services</div></a></li>
+							<li><a href="#" data-href="#contactUs"><div>About Us</div></a></li>
+							<li><a href="#" data-href="#abc" id="loginButton"><div>Login</div></a></li>
 						</ul>
 
 					</nav><!-- #primary-menu end -->
@@ -363,7 +363,7 @@
 {{-- section our services --}}
 <section style="background:#fff"> 
 
-	<div class="container"  style="background:#fff">
+	<div class="container" id="services"  style="background:#fff">
 		<div class="row" style="background:#fff; margin-top:60px;">
 			<div class="col-md-12" >
 				<h4>OUR SERVICES</h4>

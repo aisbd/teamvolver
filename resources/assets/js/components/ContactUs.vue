@@ -1,6 +1,6 @@
 <template>
     <div class="row" >
-        <div class="col-md-12" style="background: #000a; min-height:300px; text-align:center">
+        <div id="contactUs" class="col-md-12" style="background: #000a; min-height:300px; text-align:center">
             <div style="
         margin-top:100px; margin-bottom:100px">
                 <h4 class="uppercase">Ready To Jump On Board?</h4>

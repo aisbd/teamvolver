@@ -36129,7 +36129,7 @@ $(document).ready(function () {
         $('#register-form').show();
     });
 
-    $('a[data-href="#login"]').click(function () {
+    $('#loginButton').click(function () {
 
         $('.loginButton').trigger('click');
         $('#loginModal').modal();
@@ -49859,7 +49859,8 @@ var staticRenderFns = [
             background: "#000a",
             "min-height": "300px",
             "text-align": "center"
-          }
+          },
+          attrs: { id: "contactUs" }
         },
         [
           _c(

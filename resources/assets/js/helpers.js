@@ -8,7 +8,7 @@ $(document).ready(function () {
         $('#register-form').show();
     })
 
-    $('a[data-href="#login"]').click(function () {
+    $('#loginButton').click(function () {
 
         $('.loginButton').trigger('click')
         $('#loginModal').modal();

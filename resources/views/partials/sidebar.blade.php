@@ -1,6 +1,13 @@
 <nav class="col-md-2 sidebar">
     <div class="sidebar-sticky">
         <ul class="nav flex-column">
+
+            <li class="nav-item">
+                <a data-toggle="tooltip" data-placement="bottom" title="Form Team" class="nav-link {{ Request::is('/form') ? 'active' : ''  }}" href="{{ route('dashboard') }}">
+                    <i class="fas fa-chart-bar"></i>
+                </a>
+            </li>
+
             <li class="nav-item">
                 <a data-toggle="tooltip" data-placement="bottom" title="Form Team" class="nav-link {{ Request::is('/') ? 'active' : ''  }}" href="{{ route('dashboard') }}">
                     <i class="fas fa-users"></i>
@@ -8,11 +15,17 @@
             </li>
 
             <li class="nav-item">
-                <a data-toggle="tooltip" data-placement="bottom" title="Form Team" class="nav-link {{ Request::is('/form') ? 'active' : ''  }}" href="{{ route('dashboard') }}">
-                    <i class="fas fa-chart"></i>
+                <a data-toggle="tooltip" data-placement="bottom" title="@lang('app.activity_log')"  class="nav-link {{ Request::is('activity*') ? 'active' : ''  }}" href="{{ route('activity.index') }}">
+                    <i class="fas fa-calendar-alt"></i>
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a data-toggle="tooltip" data-placement="bottom" title="@lang('app.activity_log')"  class="nav-link {{ Request::is('activity*') ? 'active' : ''  }}" href="{{ route('activity.index') }}">
+                    <i class="fas fa-sliders-h"></i>
+                </a>
+            </li>
+            
             @permission('users.manage')
             <li class="nav-item">
                 <a data-toggle="tooltip" data-placement="bottom" title="@lang('app.users')"  class="nav-link {{ Request::is('user*') ? 'active' : ''  }}" href="{{ route('user.list') }}">

@@ -10810,6 +10810,16 @@ ul.tab-nav:not(.tab-nav-lg) li a {
 
 .sidebar-sticky {
   overflow: visible;
+  padding: 0;
+}
+
+.sidebar ul li a i {
+  display: inline-block;
+  font-size: 22px;
+  line-height: 22px;
+  text-align: center;
+  vertical-align: middle;
+  width: 30px;
 }
 
 .switch {
