@@ -48888,7 +48888,7 @@ var staticRenderFns = [
         "div",
         {
           staticClass: "col-md-12",
-          staticStyle: { background: "#fff", "margin-bottom": "30px" },
+          staticStyle: { background: "#fff", "padding-bottom": "30px" },
           attrs: { id: "projects" }
         },
         [

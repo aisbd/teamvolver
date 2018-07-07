@@ -1,6 +1,6 @@
 <template>
     <div class="row" >
-        <div class="col-md-12" id="projects" style="background:#fff; margin-bottom:30px">
+        <div class="col-md-12" id="projects" style="background:#fff; padding-bottom:30px">
             <h3 class="center uppercase">Projects</h3>
             <br>
 
