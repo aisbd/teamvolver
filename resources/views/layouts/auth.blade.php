@@ -431,6 +431,7 @@
 <section >
 	<div class="container-fluid" id="app">
 	<projects></projects>
+	<contact-us></contact-us>
 
 								{{-- @include('projectHexagon') --}}
 	</div>
@@ -448,8 +449,8 @@
 						<div class="col-lg-4">
 
 							<div class="widget clearfix" >
-								<img src="/assets/img/logo.png" alt="" class="img-responsive">
-									<div class="clearfix" style="height: 20px;"></div>
+								<img src="/assets/img/logo.png" alt="" class="img-responsive" style="margin-top:-55px; display:block">
+								
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem rerum, ratone					
 								</div>
 
@@ -459,13 +460,14 @@
 						<div class="col-lg-4">
 
 							<div class="widget subscribe-widget clearfix" data-loader="button">
-								<h4>Subscribe</h4>
+								<h4>Support</h4>
 
 								<div class="widget-subscribe-form-result"></div>
-								<form id="widget-subscribe-form" action="../include/subscribe.php" role="form" method="post" class="nobottommargin">
-									<input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control form-control-lg not-dark required email" placeholder="Your Email Address">
-									<button class="button button-border button-circle button-light topmargin-sm" type="submit">Subscribe Now</button>
-								</form>
+								<ul>
+									<li><a href="#">Help Center</a></li>
+									<li><a href="#">Get Started</a></li>
+									<li><a href="#">Contact Us</a></li>
+								</ul>
 							</div>
 
 						</div>
@@ -473,7 +475,7 @@
 						<div class="col-lg-4">
 
 							<div class="widget clearfix">
-								<h4>Contact</h4>
+								<h4>About Us</h4>
 
 								<p class="lead">795 Folsom Ave, Suite 600<br>San Francisco, CA 94107</p>
 

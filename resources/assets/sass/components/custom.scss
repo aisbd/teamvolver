@@ -105,3 +105,12 @@ body:not(.device-touch) .i-rounded, body:not(.device-touch) .i-plain, body:not(.
 .portfolio-filter li a:hover{
     color:$primary;
 }
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+    font-family: sans-serif;
+}
+#footer .widget > h4{
+    margin-bottom:15px;
+}
+#footer ul li{
+ list-style-type: none;
+}
