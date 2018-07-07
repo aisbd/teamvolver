@@ -523,7 +523,7 @@
 		
 
 	============================================= -->
-	<script src="/assets/js/app.js"></script>>
+	<script src="/assets/js/app.js"></script>
 	<script src="/assets/theme/js/jquery.js"></script>
 	<script src="/assets/theme/js/plugins.js"></script>
 
