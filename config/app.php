@@ -194,6 +194,7 @@ return [
         Vanguard\Providers\EventServiceProvider::class,
         Vanguard\Providers\RouteServiceProvider::class,
         Vanguard\Services\Auth\TwoFactor\AuthyServiceProvider::class,
+        Laravel\Tinker\TinkerServiceProvider::class
 
     ],
 

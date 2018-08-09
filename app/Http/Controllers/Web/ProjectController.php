@@ -4,11 +4,20 @@ namespace Vanguard\Http\Controllers\Web;
 
 use Vanguard\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Vanguard\Project;
 
 class ProjectController extends Controller
 {
      public function index(){
-         return view('projects');
+     	$designations = request()->user()->projects()->first()->designations()->select('id', 'name')->get();
+     	return $designations;
+     }
+	
+     public function store(Request $request)
+     {
+     		$project = $request->user()->projects()->create(['category_id' => $request->category, 'description' => $request->description, 'title' => $request->description ]);
+     		$project->designations()->attach($request->designations);
+     		return ['status' => 'ok'];
      }
 }
 

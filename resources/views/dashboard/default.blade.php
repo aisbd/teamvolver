@@ -10,7 +10,7 @@
 @stop
 
 @section('content')
-{{-- 
+
 <div class="row">
     <div class="col-md-3">
         <div class="card">
@@ -74,6 +74,25 @@
             <div class="panel-heading"></div>
             <div class="card-body">
                 <h5 class="card-title">
+                   Projects
+                </h5>
+
+                <div class="pt-4 px-3">
+                    <div id="app"> 
+                          <hexagon></hexagon>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="panel-heading"></div>
+            <div class="card-body">
+                <h5 class="card-title">
                     @lang('app.activity') (@lang('app.last_two_weeks'))
                 </h5>
 
@@ -84,10 +103,10 @@
         </div>
     </div>
 </div>
- --}}
+
 
 <div id="app">
-    <form-team></form-team>
+    {{-- <form-team></form-team> --}}
 </div>
 
 @stop

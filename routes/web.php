@@ -4,7 +4,8 @@
  * Authentication
  */
 
-Route::get('login', 'Auth\AuthController@getLogin');
+Route::get('/', 'DashboardController@guest'); 
+Route::get('/login', 'Auth\AuthController@getLogin');
 Route::post('login', 'Auth\AuthController@postLogin');
 
 Route::get('logout', [
@@ -65,11 +66,17 @@ Route::group(['middleware' => 'auth'], function () {
      * Dashboard
      */
 
-    Route::get('/', [
+    Route::get('/dashboard', [
         'as' => 'dashboard',
         'uses' => 'DashboardController@index'
     ]);
 
+    Route::get('/form-team', 'UsersController@formTeam');
+    Route::get('/gantt', 'GanttController@index');
+    Route::get('/gantt/data', 'GanttController@data');
+
+    Route::resource('gantt/task', 'TaskController');
+    Route::resource('gantt/link', 'LinkController');
     /**
      * User Profile
      */
@@ -374,4 +381,6 @@ $router->get('install/error', [
 
 
 // new routes
-Route::get('/projects', 'ProjectController@index');
+Route::resource('/projects', 'ProjectController');
+Route::resource('/categories', 'CategoriesController');
+Route::resource('/designations', 'DesignationsController');

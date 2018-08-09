@@ -15,17 +15,17 @@ class RegisterRequest extends Request
     {
         $rules = [
             'email' => 'required|email|unique:users,email',
-            'username' => 'required|unique:users,username',
-            'password' => 'required|confirmed|min:6',
+            'fullname' => 'required|unique:users,username',
+            'password' => 'required|min:6',
         ];
 
         if (settings('registration.captcha.enabled')) {
             $rules['g-recaptcha-response'] = 'required|captcha';
         }
 
-        if (settings('tos')) {
-            $rules['tos'] = 'accepted';
-        }
+        // if (settings('tos')) {
+        //     $rules['tos'] = 'accepted';
+        // }
 
         return $rules;
     }

@@ -44,7 +44,7 @@ class UsersController extends Controller
     {
         $this->middleware('auth');
         $this->middleware('session.database', ['only' => ['sessions', 'invalidateSession']]);
-        $this->middleware('permission:users.manage');
+        // $this->middleware('permission:users.manage');
         $this->users = $users;
     }
 
@@ -374,5 +374,11 @@ class UsersController extends Controller
 
         return redirect()->route('user.sessions', $user->id)
             ->withSuccess(trans('app.session_invalidated'));
+    }
+
+
+    public function formTeam()
+    {
+        return view('dashboard.form-team');
     }
 }

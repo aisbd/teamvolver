@@ -19,7 +19,7 @@ mix.scripts([
     'public/assets/js/sweetalert.min.js',
     'public/assets/js/delete.handler.js',
     'public/assets/plugins/js-cookie/js.cookie.js',
-    // 'public/vendor/jsvalidation/js/jsvalidation.js',
+    'public/vendor/jsvalidation/js/jsvalidation.js',
     'public/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js',
     'public/assets/plugins/croppie/croppie.js',
 

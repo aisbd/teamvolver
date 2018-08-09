@@ -86,10 +86,10 @@ class AuthController extends Controller
 
         $user = Auth::getProvider()->retrieveByCredentials($credentials);
 
-        if ($user->isUnconfirmed()) {
-            return redirect()->to('login' . $to)
-                ->withErrors(trans('app.please_confirm_your_email_first'));
-        }
+        // if ($user->isUnconfirmed()) {
+        //     return redirect()->to('login' . $to)
+        //         ->withErrors(trans('app.please_confirm_your_email_first'));
+        // }
 
         if ($user->isBanned()) {
             return redirect()->to('login' . $to)
@@ -328,6 +328,7 @@ class AuthController extends Controller
     {
         // Determine user status. User's status will be set to UNCONFIRMED
         // if he has to confirm his email or to ACTIVE if email confirmation is not required
+
         $status = settings('reg_email_confirmation')
             ? UserStatus::UNCONFIRMED
             : UserStatus::ACTIVE;
@@ -336,12 +337,14 @@ class AuthController extends Controller
 
         // Add the user to database
         $user = $this->users->create(array_merge(
-            $request->only('email', 'username', 'password'),
+            $request->only('email', 'fullname', 'password'),
             ['status' => $status, 'role_id' => $role->id]
         ));
 
         event(new Registered($user));
 
+        Auth::login($user, true);
+        return 'success';
         $message = settings('reg_email_confirmation')
             ? trans('app.account_create_confirm_email')
             : trans('app.account_created_login');

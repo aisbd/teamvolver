@@ -1,15 +1,15 @@
 <template>
-    		<div class="row register">
+		<div class="row register" id="register-form">
 			<div class="col-md-8 signup-tabs">
 
 				<div class="tabs clearfix" id="tabs">
 				
 					<ul class="tab-nav clearfix">
 						<li>
-							<a href="#tab-1">Igniter</a>
+							<a  href="#tab-1">Igniter</a>
 						</li>
 						<li>
-							<a href="#tab-3">Member</a>
+							<a  href="#tab-3">Member</a>
 						</li>
 					</ul>
 				
@@ -23,30 +23,40 @@
 							</div>
 							<div class="row">
 								<div class="col-md-12" style="padding: 30px;padding-left:50px; padding-right: 50px; ">
-									<form action="">
-										<div class="form-group">
+									
+									<div v-if="success" class="alert alert-warning">
+									  <strong>Success!</strong> Registration successfull
+									</div>
+									<div v-if="error" class="alert alert-danger">
+									  <strong>Error!</strong> Please fix the errors below
+									</div>
+
+										<div class="form-group " v-bind:class="{error: errors.fullname}">
 											<label for="fullname">Full Name</label>
-											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Enter Full Name">
+
+											<input @keyup="clearError('fullname')" type="text" v-model="fullname"   class="form-control" placeholder="Enter Full Name">
+											<small v-if="errors.fullname"  class="form-text text-muted">{{errors.fullname[0]}}</small>
+
 										</div>
-										<div class="form-group">
+										<div v-bind:class="{error: errors.email}" class="form-group">
 											<label for="fullname">Email</label>
-											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Example: someone@example.com">
+											<input  @keyup="clearError('email')"  type="text" v-model="email"  class="form-control" placeholder="Example: someone@example.com">											<small v-if="errors.email"  class="form-text text-muted">{{errors.email[0]}}</small>
 										</div>
-										<div class="form-group">
+										<div v-bind:class="{error: errors.password}"  class="form-group">
 											<label for="fullname">Password</label>
-											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Atleast 6 digits">
+											<input  @keyup="clearError('password')"  type="password" v-model="password"   class="form-control" placeholder="Atleast 6 digits">	<small v-if="errors.password"  class="form-text text-muted">{{errors.password[0]}}</small>
 										</div>
 										<div class="form-group">
 											<label for="fullname">Where you live</label>
-											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Example: New York, US">
+											<input type="text" v-model="address"   class="form-control" placeholder="Example: New York, US">
 										</div>
-										<button class="button button-circle primary">Sign up</button>
+										<button @click="signUp('igniter')" class="button button-circle primary">Sign up</button>
 										<div style="float: right;text-align: right">
 											<span class="italic">Already a Member?</span> <br>
-											<u><a  href="#">LOGIN</a></u>
+											<u><a class="loginButton"  href="#">LOGIN</a></u>
 											
 										</div>
-									</form>
+								
 								</div>
 							</div>
                         </div>
@@ -58,30 +68,30 @@
 							</div>
 							<div class="row">
 								<div class="col-md-12" style="padding: 30px;padding-left:50px; padding-right: 50px; ">
-									<form action="">
+									
 										<div class="form-group">
 											<label for="fullname">Full Name</label>
-											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Enter Full Name">
+											<input type="text" v-model="fullname"   class="form-control" placeholder="Enter Full Name">
 										</div>
 										<div class="form-group">
 											<label for="fullname">Email</label>
-											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Example: someone@example.com">
+											<input type="text" v-model="email"  class="form-control" placeholder="Example: someone@example.com">
 										</div>
 										<div class="form-group">
 											<label for="fullname">Password</label>
-											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Atleast 6 digits">
+											<input type="password" v-model="password"   class="form-control" placeholder="Atleast 6 digits">
 										</div>
 										<div class="form-group">
 											<label for="fullname">Where you live</label>
-											<input type="text" name="fullname" id="fullname" class="form-control" placeholder="Example: New York, US">
+											<input type="text" v-model="address"   class="form-control" placeholder="Example: New York, US">
 										</div>
-										<button class="button button-circle primary">Sign up</button>
+										<button @click="signUp('member')"  class="button button-circle primary">Sign up</button>
 										<div style="float: right;text-align: right">
 											<span class="italic">Already a Member?</span> <br>
-											<u><a  href="#">LOGIN</a></u>
+											<u><a class="loginButton"  href="#">LOGIN</a></u>
 											
 										</div>
-									</form>
+								
 								</div>
 							</div>
                         </div>                        
@@ -97,12 +107,43 @@
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias libero magnam dolores ipsam odio iure, error explicabo quasi eos, aspernatur alias odit inventore voluptas consectetur consequatur ut nobis dolorum optio.</p>
 				<h2 style="  margin-top: -20px; margin-bottom: 30px;">Join Us Now !</h2>
 			</div>
-		</div>
+		</div>	
 </template>
 <script>
-    export default {
-        mounted() {
-            console.log('Component mounted.')
-        }
-    }
+	export default{
+		data(){
+		   	return { 
+		   		fullname: "",
+		   		email: "",
+		   		password: "",
+		   		address: "",
+		   		errors: {
+		   			fullname: false, email: false, password: false, address: false
+		   		},
+		   		success: false
+		   	}
+   		},
+   		methods: {
+   			signUp(type){
+   				this.userType = type;
+   				axios.post('/register', {
+   					email: this.email,
+   					password: this.password, 
+   					fullname: this.fullname,
+   					address: this.address,
+   					type: this.userType
+   				}).then((response) => { 
+   					this.success = true;
+   					window.location = '/dashboard'
+   				},
+  						(error) => { 
+  							this.errors = error.response.data })
+   			},
+   			clearError(field){
+				this.errors[field] = false
+			}
+
+   		}
+}   
+	
 </script>

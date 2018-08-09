@@ -3,25 +3,25 @@
         <ul class="nav flex-column">
 
             <li class="nav-item">
-                <a data-toggle="tooltip" data-placement="bottom" title="Form Team" class="nav-link {{ Request::is('/form') ? 'active' : ''  }}" href="{{ route('dashboard') }}">
+                <a data-toggle="tooltip" data-placement="bottom" title="Dashboard" class="nav-link {{ Request::is('dashboard') ? 'active' : ''  }}" href="/dashboard">
                     <i class="fas fa-chart-bar"></i>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a data-toggle="tooltip" data-placement="bottom" title="Form Team" class="nav-link {{ Request::is('/') ? 'active' : ''  }}" href="{{ route('dashboard') }}">
+                <a data-toggle="tooltip" data-placement="bottom" title="Form Team" class="nav-link {{ Request::is('form-team') ? 'active' : ''  }}" href="/form-team">
                     <i class="fas fa-users"></i>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a data-toggle="tooltip" data-placement="bottom" title="@lang('app.activity_log')"  class="nav-link {{ Request::is('activity*') ? 'active' : ''  }}" href="{{ route('activity.index') }}">
+                <a data-toggle="tooltip" data-placement="bottom" title="@lang('app.activity_log')"  class="nav-link {{ Request::is('*activity*') ? 'active' : ''  }}" href="/profile/activity">
                     <i class="fas fa-calendar-alt"></i>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a data-toggle="tooltip" data-placement="bottom" title="@lang('app.activity_log')"  class="nav-link {{ Request::is('activity*') ? 'active' : ''  }}" href="{{ route('activity.index') }}">
+                <a data-toggle="tooltip" data-placement="bottom" title="Gantt"  class="nav-link {{ Request::is('*gantt*') ? 'active' : ''  }}" href="/gantt">
                     <i class="fas fa-sliders-h"></i>
                 </a>
             </li>

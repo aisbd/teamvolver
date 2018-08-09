@@ -11407,6 +11407,28 @@ h6,
   list-style-type: none;
 }
 
+.error input {
+  border-color: #dc3545 !important;
+}
+
+.error small {
+  color: #dc3545 !important;
+}
+
+.card {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  border: none !important;
+}
+
+.modal-content {
+  border: 0;
+}
+
+#primary-menu ul li a {
+  padding-left: 5px !important;
+}
+
 @media (max-width: 991.98px) {
   .sidebar:not(.expanded) {
     margin-left: -250px;

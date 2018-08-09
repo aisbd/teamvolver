@@ -13,6 +13,8 @@ window.Vue = require('vue');
 Vue.component('form-team', require('./components/FormTeam.vue'));
 Vue.component('projects', require('./components/Projects.vue'));
 Vue.component('contact-us', require('./components/ContactUs.vue'));
+Vue.component('register-form', require('./components/Register.vue'));
+Vue.component('hexagon', require('./components/Hexagon.vue'));
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -22,6 +24,11 @@ Vue.component('contact-us', require('./components/ContactUs.vue'));
 if(document.querySelector('#app')){
     const app = new Vue({
         el: '#app'
+    });
+}
+if(document.querySelector('#loginModal')){
+    const app1 = new Vue({
+        el: '#loginModal'
     });
 }
 

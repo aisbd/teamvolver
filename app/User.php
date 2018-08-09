@@ -123,4 +123,8 @@ class User extends Authenticatable implements TwoFactorAuthenticatableContract, 
             'jti' => $token->id
         ];
     }
+
+    public function projects(){
+        return $this->hasMany(Project::class);
+    }
 }

@@ -25,7 +25,8 @@
     <link media="all" type="text/css" rel="stylesheet" href="{{ mix('assets/css/app.css') }}">
 
     <link media="all" type="text/css" rel="stylesheet" href="/assets/theme/custom.css">
-
+    <script src="/d3/js/d3.min.js"></script>
+    <script src="/d3/js/d3-legend.min.js"></script>
     @yield('styles')
 </head>
 <body>
@@ -44,7 +45,7 @@
     </div>
 
     <script src="{{ mix('assets/js/vendor.js') }}"></script>
-    <script src="'assets/js/as/app.js'"></script>
+    <script src="/assets/js/as/app.js"></script>
     <script src="{{ mix('assets/js/app.js') }}"></script>
     @yield('scripts')
 </body>

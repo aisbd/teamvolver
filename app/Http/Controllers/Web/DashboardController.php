@@ -31,7 +31,7 @@ class DashboardController extends Controller
         $this->users = $users;
         $this->activities = $activities;
     }
-
+    
     /**
      * Displays dashboard based on user's role.
      *
@@ -39,11 +39,21 @@ class DashboardController extends Controller
      */
     public function index()
     {
+
         if (Auth::user()->hasRole('Admin')) {
             return $this->adminDashboard();
         }
 
         return $this->defaultDashboard();
+    }
+
+
+    public function guest()
+    {
+                
+                $socialProviders = config('auth.social.providers');
+                return view('auth.login', compact('socialProviders'));
+
     }
 
     /**
