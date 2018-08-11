@@ -326,6 +326,7 @@ class AuthController extends Controller
      */
     public function postRegister(RegisterRequest $request, RoleRepository $roles)
     {
+        // dd(request()->all());
         // Determine user status. User's status will be set to UNCONFIRMED
         // if he has to confirm his email or to ACTIVE if email confirmation is not required
 
@@ -337,7 +338,7 @@ class AuthController extends Controller
 
         // Add the user to database
         $user = $this->users->create(array_merge(
-            $request->only('email', 'fullname', 'password'),
+            $request->only('email', 'fullname', 'password', 'type'),
             ['status' => $status, 'role_id' => $role->id]
         ));
 

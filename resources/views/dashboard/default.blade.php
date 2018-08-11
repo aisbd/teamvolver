@@ -67,7 +67,7 @@
 
     </div>
 </div>
-
+@if(\Auth::user()->type == "igniter")
 <div class="row">
     <div class="col-md-12">
         <div class="card">
@@ -86,7 +86,7 @@
         </div>
     </div>
 </div>
-
+@endif
 <div class="row">
     <div class="col-md-12">
         <div class="card">

@@ -138,7 +138,9 @@
 								</div>
 
 								{{-- hexagon --}}
+								@if(!\Auth::guest())
 								@include('hexagon')
+								@endif
 
 								<div >
 								

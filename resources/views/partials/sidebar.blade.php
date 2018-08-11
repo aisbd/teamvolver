@@ -8,9 +8,30 @@
                 </a>
             </li>
 
+@if(\Auth::user()->type == 'igniter')
             <li class="nav-item">
                 <a data-toggle="tooltip" data-placement="bottom" title="Form Team" class="nav-link {{ Request::is('form-team') ? 'active' : ''  }}" href="/form-team">
                     <i class="fas fa-users"></i>
+                </a>
+            </li>
+
+
+            <li class="nav-item">
+                <a data-toggle="tooltip" data-placement="bottom" title="Gantt"  class="nav-link {{ Request::is('*gantt*') ? 'active' : ''  }}" href="/gantt">
+                    <i class="fas fa-sliders-h"></i>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a data-toggle="tooltip" data-placement="bottom" title="@lang('app.activity_log')"  class="nav-link {{ Request::is('*activity*') ? 'active' : ''  }}" href="/profile/activity">
+                    <i class="fas fa-calendar-alt"></i>
+                </a>
+            </li>
+    @else
+            
+            <li class="nav-item">
+                <a data-toggle="tooltip" data-placement="bottom" title="Projects"  class="nav-link {{ Request::is('*projects*') ? 'active' : ''  }}" href="/projects">
+                    <i class="fas fa-calendar"></i>
                 </a>
             </li>
 
@@ -20,12 +41,7 @@
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a data-toggle="tooltip" data-placement="bottom" title="Gantt"  class="nav-link {{ Request::is('*gantt*') ? 'active' : ''  }}" href="/gantt">
-                    <i class="fas fa-sliders-h"></i>
-                </a>
-            </li>
-            
+    @endif
             @permission('users.manage')
             <li class="nav-item">
                 <a data-toggle="tooltip" data-placement="bottom" title="@lang('app.users')"  class="nav-link {{ Request::is('user*') ? 'active' : ''  }}" href="{{ route('user.list') }}">

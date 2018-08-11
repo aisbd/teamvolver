@@ -17,6 +17,7 @@ class TaskController extends Controller
         $task->duration = $request->duration;
         $task->progress = $request->has("progress") ? $request->progress : 0;
         $task->parent = $request->parent;
+        $task->project_id = $request->user()->projects()->first()->id;
  
         $task->save();
  

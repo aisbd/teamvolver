@@ -15,7 +15,7 @@
  <br>
 <h3>Manage Project Schedule / Gantt</h3> <br>
  
-<div class="row justify-content-between mt-3 mb-4"  >
+<!-- <div class="row justify-content-between mt-3 mb-4"  >
                 <div class="col-lg-3 col-md-4">
                     <div class="form-group ">
                     	<label for="project" class="label-control">Select Project: </label>
@@ -24,7 +24,12 @@
                     	</select>
                     </div>
                 </div>
-            </div>
+</div> -->
+
+@if(\Auth::user()->projects()->first() == null)
+No project found.
+@else
+
 
 <div id="gantt_here" style='width:100%;min-height: 500px'></div>
 <script type="text/javascript">
@@ -35,6 +40,9 @@ var dp = new gantt.dataProcessor("/gantt");
 dp.init(gantt);
 dp.setTransactionMode("REST");
 </script>
+
+
+@endif
 
 @stop
 

@@ -9,6 +9,9 @@ use Vanguard\Project;
 class ProjectController extends Controller
 {
      public function index(){
+          if( !\Auth::guest() && request()->user()->type == 'member'){
+               return $this->memberProjectPage();
+          }
      	$designations = request()->user()->projects()->first()->designations()->select('id', 'name')->get();
      	return $designations;
      }
@@ -18,6 +21,11 @@ class ProjectController extends Controller
      		$project = $request->user()->projects()->create(['category_id' => $request->category, 'description' => $request->description, 'title' => $request->description ]);
      		$project->designations()->attach($request->designations);
      		return ['status' => 'ok'];
+     }
+
+     public function memberProjectPage()
+     {
+          return view('member_project');
      }
 }
 

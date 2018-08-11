@@ -19,7 +19,7 @@ class GanttController extends Controller
         $links = new \Vanguard\Link();
  
         return response()->json([
-            "data" => $tasks->all(),
+            "data" => $tasks->where('project_id', request()->user()->projects()->first()->id)->get(),
             "links" => $links->all()
         ]);
     }

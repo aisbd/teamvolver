@@ -14,7 +14,7 @@ class AlterUsersAddTypeColumn extends Migration
     public function up()
     {
             Schema::table('users', function (Blueprint $table) {
-                $table->tinyInteger('type')->nullable();
+                $table->string('type')->nullable();
             });
 
     }
