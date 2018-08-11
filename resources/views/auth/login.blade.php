@@ -20,11 +20,7 @@
 								</div>
 
 								{{-- hexagon --}}
-								@if(!Auth::guest())
 								@include('hexagon')
-								@else
-								<div style="height: 30px"></div>
-								@endif
 
 							@if(Auth::guest())
 								<div >
