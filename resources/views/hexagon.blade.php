@@ -1,13 +1,9 @@
 
-@if(Auth::guest())
-
-@include('hexagon_old')
-@else
 
 <div id="app">
 	<hexagon :data="null"></hexagon>
 </div>	
-@endif							
+					
 								{{-- hexagon --}}
 	{{-- <svg id="svg" width="100%" height="400" font-family="sans-serif" font-size="10" text-anchor="middle"></svg> --}}
 

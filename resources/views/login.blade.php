@@ -14,7 +14,6 @@
     <div class="card mt-5">
         <div class="card-body">
 
-
             <div class="p-4">
                 {{-- @include('auth.social.buttons') --}}
 

@@ -33715,6 +33715,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -34192,11 +34198,7 @@ var staticRenderFns = [
     return _c(
       "div",
       { staticClass: "col-md-12", staticStyle: { "text-align": "center" } },
-      [
-        _c("h4", [_vm._v("\n\t\t\t\t\t\t\t\t\tFind Your Dream Team")]),
-        _vm._v(" "),
-        _c("p", [_vm._v("Lrorem ipsum donor fminet ")])
-      ]
+      [_c("h4", [_vm._v("\n\t\t\t\t\t\t\t\t\tBuild Your  Team")])]
     )
   },
   function() {
@@ -34262,13 +34264,14 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", [
         _vm._v(
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias libero magnam dolores ipsam odio iure, error explicabo quasi eos, aspernatur alias odit inventore voluptas consectetur consequatur ut nobis dolorum optio."
+          "\n\t\t\t\tWe offer a platform of creating and growing your activity, meeting the people that you find matching your needs. We are a community of learners and doers, we strive for new ideas to be realized. We start from scratch and follow the process of growing, supporting most needs in the developmental phases. \n\n\t\t\t\t"
         )
       ]),
       _vm._v(" "),
       _c("p", [
+        _c("strong", [_vm._v("Our vision:")]),
         _vm._v(
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias libero magnam dolores ipsam odio iure, error explicabo quasi eos, aspernatur alias odit inventore voluptas consectetur consequatur ut nobis dolorum optio."
+          " We believe many ideas should be implemented for a better society, we share thoughts and practices to support each other. We wish you a great experience forming your team and developing your idea from scratch to a full working mode.\n\n\t\t\t\t"
         )
       ]),
       _vm._v(" "),

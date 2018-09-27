@@ -16,8 +16,6 @@
 
 
 
-
-
 @stop
 
 @section('scripts')

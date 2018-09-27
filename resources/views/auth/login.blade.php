@@ -23,10 +23,9 @@
 								@include('hexagon')
 
 							@if(Auth::guest())
-								<div >
-								
-								<button class="btn btn-primary become-igniter transparent uppercase margin-bottom-20" style="width:230px;">Become A Igniter</button> 
-								<button class="btn btn-primary become-member transparent uppercase margin-bottom-20" style="width:230px;">Become A Team Member</button>
+								<div style="display: inline-block; width: 470px"  >
+								<a class="btn-hexagon orange become-igniter transparent uppercase margin-bottom-20" style="width:210px;float: left;">Become An Igniter</a> 
+								<a class="btn-hexagon orange  become-member transparent uppercase margin-bottom-20" style="width:210px; float: right;">Become A Team Member</a>
 								</div>
 							@endif
 								{{-- hexagon --}}

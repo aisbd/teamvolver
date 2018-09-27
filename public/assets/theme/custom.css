@@ -231,3 +231,100 @@ a:hover{
     padding: 0 !important;
     font-size: 12px;
 }
+
+/* General Button Style */
+.btn-hexagon{
+  position: relative;
+    display:block;
+    background: transparent;
+    width:200px;
+    height:60px;
+    line-height:60px;
+    text-align:center;
+    font-size:12px;
+    text-decoration:none;
+    text-transform:uppercase;
+    margin:40px auto;
+}
+.btn-hexagon:before, .btn-hexagon:after {
+    width:200px;
+  left: 0px;
+    height:31px;
+  z-index: -1;
+}
+.violet{ color: violet; }
+.indigo{ color: indigo; }
+.slateblue{ color: slateblue; }
+.mediumseagreen{ color: mediumseagreen; }
+.yellowgreen{ color: yellowgreen; }
+.orange{ color: #ffc107; }
+.indianred{ color: indianred; }
+/* Button Border Style */
+.violet:before,.violet:after {
+    border: 1px solid violet;
+}
+.indigo:before,.indigo:after {
+    border: 1px solid indigo;
+}
+.slateblue:before,.slateblue:after {
+    border: 1px solid slateblue;
+}
+.mediumseagreen:before,.mediumseagreen:after {
+    border: 1px solid mediumseagreen;
+}
+.yellowgreen:before,.yellowgreen:after {
+    border: 1px solid yellowgreen;
+}
+.orange:before,.orange:after {
+    border: 2px solid #ffc107;
+}
+.indianred:before,.indianred:after {
+    border: 1px solid indianred;
+}
+
+.btn-hexagon:before{
+  position: absolute;
+  content: '';
+  border-bottom: none;
+  -webkit-transform: perspective(15px) rotateX(5deg);
+  -moz-transform: perspective(15px) rotateX(5deg);
+  transform: perspective(15px) rotateX(5deg);  
+}
+.btn-hexagon:after{
+  position: absolute;
+  top: 32px;
+  content: '';
+  border-top: none;
+  -webkit-transform: perspective(15px) rotateX(-5deg);
+  -moz-transform: perspective(15px) rotateX(-5deg);
+  transform: perspective(15px) rotateX(-5deg);
+}
+
+/* Button Hover Style */
+.violet:hover:before, .violet:hover:after {
+    background: violet;
+}
+.indigo:hover:before, .indigo:hover:after {
+    background: indigo;
+}
+.mediumseagreen:hover:before, .mediumseagreen:hover:after {
+    background: mediumseagreen;
+}
+.slateblue:hover:before, .slateblue:hover:after {
+    background: slateblue;
+}
+.yellowgreen:hover:before, .yellowgreen:hover:after {
+    background: yellowgreen;
+}
+.orange:hover:before, .orange:hover:after {
+    background: #ffc107;
+}
+.indianred:hover:before, .indianred:hover:after {
+    background: indianred;
+}
+
+.btn-hexagon:hover{
+    color:#fff;
+    cursor: pointer;
+}
+
