@@ -126,6 +126,7 @@
 		   		errors: {
 		   			fullname: false, email: false, password: false, address: false
 		   		},
+		   		error: false,
 		   		success: false
 		   	}
    		},

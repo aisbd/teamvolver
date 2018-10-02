@@ -33732,6 +33732,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       errors: {
         fullname: false, email: false, password: false, address: false
       },
+      error: false,
       success: false
     };
   },
