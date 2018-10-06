@@ -329,3 +329,7 @@ a:hover{
     cursor: pointer;
 }
 
+.hexagon-container{
+    margin-top: 70px;
+    margin-bottom: -50px;
+}

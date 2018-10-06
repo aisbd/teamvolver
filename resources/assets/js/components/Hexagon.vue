@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<svg id="svg" width="100%" height="400" font-family="sans-serif" font-size="10" text-anchor="middle"></svg>
+		<svg id="svg" width="100%" height="370" font-family="sans-serif" font-size="10" text-anchor="middle"></svg>
 	</div>
 
 

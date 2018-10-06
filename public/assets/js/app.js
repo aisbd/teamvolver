@@ -31728,7 +31728,7 @@ var render = function() {
       attrs: {
         id: "svg",
         width: "100%",
-        height: "400",
+        height: "370",
         "font-family": "sans-serif",
         "font-size": "10",
         "text-anchor": "middle"
@@ -33963,7 +33963,7 @@ var render = function() {
                       _vm._v(" "),
                       _c("div", { staticClass: "form-group" }, [
                         _c("label", { attrs: { for: "fullname" } }, [
-                          _vm._v("Where you live")
+                          _vm._v("Your location")
                         ]),
                         _vm._v(" "),
                         _c("input", {

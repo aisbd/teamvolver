@@ -14,16 +14,16 @@
 						<div class="vertical-middle">
 							<div class="emphasis-title">
 								<div class="hexagon-container" style="color:#ffc107">
-									<div style="max-width:400px; border-bottom:2px solid #ffc107; margin: 0 auto; margin-bottom:20px;"></div>
-									<h2 style="color:#ffc107; letter-spacing: 5px; font-weight:normal; font-size:50px; margin-bottom:20px" class="double-pica">T E A M V O L V E R</h2>
-									<p style="font-size: 17px; letter-spacing: 5px; color:#ffc107">A PLATFORM FOR CREATING TEAMS THAT <br> DEVELOPE PROJECTS</p>
+									<div style="max-width:400px; border-bottom:2px solid #ffc107; margin: 0 auto; margin-bottom:10px;"></div>
+									<h2 style="color:#ffc107; letter-spacing: 5px; font-weight:normal; font-size:45px; margin-bottom:10px" class="double-pica">T E A M V O L V E R</h2>
+									<p style="font-size: 15px; letter-spacing: 5px; color:#ffc107">A PLATFORM FOR CREATING TEAMS THAT <br> DEVELOPE PROJECTS</p>
 								</div>
 
 								{{-- hexagon --}}
 								@include('hexagon')
 
 							@if(Auth::guest())
-								<div style="display: inline-block; width: 470px"  >
+								<div style="display: inline-block; width: 470px; margin-top: -60px"   >
 								<a class="btn-hexagon orange become-igniter transparent uppercase margin-bottom-20" style="width:210px;float: left;">Become An Igniter</a> 
 								<a class="btn-hexagon orange  become-member transparent uppercase margin-bottom-20" style="width:210px; float: right;">Become A Team Member</a>
 								</div>
