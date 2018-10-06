@@ -47,7 +47,7 @@
 											<input  @keyup="clearError('password')"  type="password" v-model="password"   class="form-control" placeholder="Atleast 6 digits">	<small v-if="errors.password"  class="form-text text-muted">{{errors.password[0]}}</small>
 										</div>
 										<div class="form-group">
-											<label for="fullname">Where you live</label>
+											<label for="fullname">Your location</label>
 											<input type="text" v-model="address"   class="form-control" placeholder="Example: New York, US">
 										</div>
 										<button @click="signUp('igniter')" class="button button-circle primary">Sign up</button>
