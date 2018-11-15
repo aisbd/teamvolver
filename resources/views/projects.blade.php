@@ -1,1 +1,1 @@
-@extends('layouts.web')
+	@extends('layouts.web')

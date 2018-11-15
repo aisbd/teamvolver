@@ -64,7 +64,7 @@
 							<div class="col-md-12" style="text-align: center">
 								<h4>
 									Find Your Dream Team</h4>
-								<p>Lrorem ipsum donor fminet </p>
+								<!-- <p>Lrorem ipsum donor fminet </p> -->
 							</div>
 							<div class="row">
 								<div class="col-md-12" style="padding: 30px;padding-left:50px; padding-right: 50px; ">
@@ -111,7 +111,7 @@
 					<strong>Our vision:</strong> We believe many ideas should be implemented for a better society, we share thoughts and practices to support each other. We wish you a great experience forming your team and developing your idea from scratch to a full working mode.
 
 				</p>
-				<h2 style="  margin-top: -20px; margin-bottom: 30px;">Join Us Now !</h2>
+				<h2 style="  margin-top: -10px; margin-bottom: 30px;">Join Us Now !</h2>
 			</div>
 		</div>	
 </template>

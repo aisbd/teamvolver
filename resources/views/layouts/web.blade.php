@@ -1,127 +1,9 @@
-<!DOCTYPE html>
-<html dir="ltr" lang="en-US">
-<head>
+@extends('layouts.auth')
 
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="author" content="Seelim" />
+{{-- @section('page-title', "") --}}
 
-	<!-- Stylesheets
-	============================================= -->
-	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Roboto:300,400,500,700" rel="stylesheet" type="text/css" />
-<link href="https://fonts.googleapis.com/css?family=IM+Fell+Double+Pica" rel="stylesheet">
+@section('content')
 
-	<link rel="stylesheet" href="/assets/theme/style.css" type="text/css" />
-
-	<!-- One Page Module Specific Stylesheet -->
-	<link rel="stylesheet" href="/assets/theme/one-page/onepage.css" type="text/css" />
-	<!-- / -->
-
-	<link rel="stylesheet" href="/assets/theme/css/dark.css" type="text/css" />
-	<link rel="stylesheet" href="/assets/theme/css/font-icons.css" type="text/css" />
-	<link rel="stylesheet" href="/assets/theme/one-page/css/et-line.css" type="text/css" />
-	<link rel="stylesheet" href="/assets/theme/css/animate.css" type="text/css" />
-	<link rel="stylesheet" href="/assets/theme/css/magnific-popup.css" type="text/css" />
-
-	<link rel="stylesheet" href="/assets/theme/one-page/css/fonts.css" type="text/css" />
-
-    <link rel="stylesheet" href="/assets/theme/css/responsive.css" type="text/css" />
-    
-    {!! HTML::style('assets/css/app.css') !!}
-    {!! HTML::style('assets/css/fontawesome-all.min.css') !!}
-	<link rel="stylesheet" href="/assets/theme/custom.css" type="text/css" />
-
-
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	
-	<style>
-		#header-wrap{
-			border: 0 !important;
-		}
-	</style>
-	<!-- Document Title
-    ============================================= -->
-    
-    <title>@yield('page-title')  {{ settings('app_name') }}</title>
-
-</head>
-
-<body class="stretched" >
-
-
-
-<!-- Modal -->
-<div class="modal1 mfp-hide popup" style="max-width: 900px; margin:auto">
-	<div class="block divcenter" >
-
-
-	</div>
-</div>
-<div id="loginModal" class="modal fade popup" role="dialog">
-  <div class="modal-dialog modal-lg">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-
-      <div class="modal-body block divcenter">
-
-
-		@include('register')
-		@include('login')
-
-      </div>
-
-    </div>
-
-  </div>
-</div>
-	<div class="body-overlay"></div>
-
-	<!-- Document Wrapper
-	============================================= -->
-	<div id="wrapper" class="clearfix">
-
-		<!-- Header
-		============================================= -->
-		<header id="header" class="full-header transparent-header border-full-header dark static-s" data-sticky-class="not-dark" data-sticky-offset="full" data-sticky-offset-negative="100">
-
-			<div id="header-wrap">
-
-				<div class="container clearfix">
-
-					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
-
-					<!-- Logo	
-					============================================= -->
-					<div id="logo">
-						<a href="index.html" class="standard-logo" data-dark-logo="/assets/img/logo.png"><img src="/assets/img/logo.png" alt="Canvas Logo"></a>
-						<a href="index.html" class="retina-logo" data-dark-logo="/assets/img/logo.png"><img src="/assets/img/logo.png" alt="Canvas Logo"></a>
-					</div><!-- #logo end -->
-
-					<!-- Primary Navigation
-					============================================= -->
-					<nav id="primary-menu">
-
-						<ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
-							<li><a href="#" data-href="#wrapper"><div>Home</div></a></li>
-							<li><a href="#" data-href="#team-igniter" data-offset="165"><div>Team Igniter</div></a></li>
-							<li><a href="#" data-href="#team-member" data-offset="165"><div>Team member</div></a></li>
-							<li><a href="#" data-href="#section-services"><div>Projects</div></a></li>
-							<li><a href="#" data-href="#section-blog"><div>Services</div></a></li>
-							<li><a href="#" data-href="#section-contact"><div>About Us</div></a></li>
-							<li><a href="#" data-href="#login"><div>Login</div></a></li>
-						</ul>
-
-					</nav><!-- #primary-menu end -->
-
-				</div>
-
-			</div>
-
-		</header><!-- #header end -->
-
-		@yield('content')
-		<!-- Slider
-		============================================= -->
 		<section id="slider" class="slider-element slider-parallax full-screen force-full-screen" style="background: #000">
 
 			<div class="slider-parallax-inner">
@@ -132,21 +14,20 @@
 						<div class="vertical-middle">
 							<div class="emphasis-title">
 								<div class="hexagon-container" style="color:#ffc107">
-									<div style="max-width:400px; border-bottom:2px solid #ffc107; margin: 0 auto; margin-bottom:20px;"></div>
-									<h2 style="color:#ffc107; letter-spacing: 5px; font-weight:normal; font-size:50px; margin-bottom:20px" class="double-pica">T E A M V O L V E R</h2>
-									<p style="font-size: 17px; letter-spacing: 5px; color:#ffc107">A PLATFORM FOR CREATING TEAMS THAT <br> DEVELOPE PROJECTS</p>
+									<div style="max-width:400px; border-bottom:2px solid #ffc107; margin: 0 auto; margin-bottom:10px;"></div>
+									<h2 style="color:#ffc107; letter-spacing: 5px; font-weight:normal; font-size:45px; margin-bottom:10px" class="double-pica">T E A M V O L V E R</h2>
+									<p style="font-size: 15px; letter-spacing: 5px; color:#ffc107">A PLATFORM FOR CREATING TEAMS THAT <br> DEVELOPE PROJECTS</p>
 								</div>
 
 								{{-- hexagon --}}
-								@if(!\Auth::guest())
 								@include('hexagon')
-								@endif
 
-								<div >
-								
-								<button class="btn btn-primary become-igniter transparent uppercase margin-bottom-20" style="width:230px;">Become A Igniter</button> 
-								<button class="btn btn-primary become-member transparent uppercase margin-bottom-20" style="width:230px;">Become A Team Member</button>
+							@if(Auth::guest())
+								<div style="display: inline-block; width: 470px; margin-top: -60px"   >
+								<a class="btn-hexagon orange become-igniter transparent uppercase margin-bottom-20" style="width:210px;float: left;">Become An Igniter</a> 
+								<a class="btn-hexagon orange  become-member transparent uppercase margin-bottom-20" style="width:210px; float: right;">Become A Team Member</a>
 								</div>
+							@endif
 								{{-- hexagon --}}
 								
 							</div>
@@ -223,6 +104,13 @@
                          {{-- section # how it works --}}
         <div class="container-fluid" id="howWeWork">
             <div class="background-image"></div>
+            	<div class="row">
+            		
+                	<div class="col-md-12" style="margin-bottom: 80px">
+                		<h2 style="color:#fff">HOW WE WORK?</h2>
+                		<h5 style="color:#fff">AS IGNITER</h5>
+                	</div>
+            	</div>
                 <div class="row" id="team-igniter">
                     <div class="col-md-2"></div>
                     <div class="col-md-2">
@@ -231,15 +119,15 @@
 							<h2>1</h2>
 							<h3>POST YOUR PROJECT</h3>
 							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam minima esse accusantium distinctio quidem 
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam  
 							</p>
 						 </div>
 
 						<div style=" top:180px; left:-10px; font-size:12px; line-height:15px; text-align:right">
 							<h2>2</h2>
-							<h3>POST YOUR PROJECT</h3>
+							<h3>EVALUATE AND CHOOSE TEAM MEMBERS</h3>
 							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam minima esse accusantium distinctio quidem 
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam 
 							</p>
 						 </div>
 						<div style="left:-100px; top:-15px; font-size:12px; line-height:15px;">START <br> AS IGNTER </div>
@@ -258,9 +146,9 @@
 
 						<div style=" top:25px; left:25px; font-size:12px; line-height:15px;">
 							<h2>03</h2>
-							<h3>POST YOUR PROJECT</h3>
+							<h3>TEAM FORMING</h3>
 							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam minima esse accusantium distinctio quidem 
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam 
 							</p>
 						 </div>
 
@@ -272,9 +160,9 @@
 
 						<div style=" bottom:0; left:35px; font-size:12px; line-height:15px;">
 							<h2>4</h2>
-							<h3>POST YOUR PROJECT</h3>
+							<h3>MISION AND WORKFLOW</h3>
 							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam minima esse accusantium distinctio quidem 
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam 
 							</p>
 						 </div>
 
@@ -287,35 +175,43 @@
 
 						<div style=" top:45px; left:35px; font-size:12px; line-height:15px;">
 							<h2>05</h2>
-							<h3>POST YOUR PROJECT</h3>
+							<h3>PROJECT DEVELOPMENT</h3>
 							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam minima esse accusantium distinctio quidem 
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. 
 							</p>
 						 </div>
 
 					</div>
 				</div>  
 				
+            	<div class="row">
+            		
+                	<div class="col-md-12" style="margin-bottom: -50px; margin-top:120px">
+                		<h5 style="color:#fff">AS MEMBER</h5>
+                	</div>
+            	</div>
+
+
                 <div class="row" style="margin-top:140px" id="team-member">
                     <div class="col-md-2"></div>
                     <div class="col-md-2">
 
 						<div  style="left:calc(100% + 30px); top:-25px; font-size:12px; line-height:15px;">
 							<h2>01</h2>
-							<h3>POST YOUR PROJECT</h3>
+							<h3>CHOOSE A PROJECT TO WORK IN</h3>
 							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam minima esse accusantium distinctio quidem 
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. 
 							</p>
 						 </div>
 
 						<div style=" top:180px; left:-10px; font-size:12px; line-height:15px; text-align:right">
 							<h2>02</h2>
-							<h3>POST YOUR PROJECT</h3>
+							<h3>SIGN UP IN THHE EMPTY SPACE OF THE HEXAGON</h3>
 							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam minima esse accusantium distinctio quidem 
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. 
 							</p>
 						 </div>
-						<div style="left:-100px; top:-15px; font-size:12px; line-height:15px;">START <br> AS IGNTER </div>
+						<div style="left:-100px; top:-15px; font-size:12px; line-height:15px;">START <br> AS MEMBER </div>
                         <i style="left:-10px; top:-10px; border:0; height:20px; width:20px; line-height:20px; font-size:9px; background:#ffc107;color:#fff" class="fa fa-play"></i>
                         <i style="right:-20px;  top:-20px" class="fa fa-file"></i>
        
@@ -331,9 +227,9 @@
 
 						<div style=" top:25px; left:25px; font-size:12px; line-height:15px;">
 							<h2>03</h2>
-							<h3>POST YOUR PROJECT</h3>
+							<h3>CONNECT TO THE IGNITER OF THE PROJECT</h3>
 							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam minima esse accusantium distinctio quidem 
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. 
 							</p>
 						 </div>
 
@@ -345,9 +241,9 @@
 
 						<div style=" bottom:0; left:35px; font-size:12px; line-height:15px;">
 							<h2>04</h2>
-							<h3>POST YOUR PROJECT</h3>
+							<h3>BECOME A TEAM MEMBER & HELP IN PLANNING AND EXECUTING THE PLAN</h3>
 							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quibusdam minima esse accusantium distinctio quidem 
+								Lorem ipsum dolor sit amet consectetur 
 							</p>
 						 </div>
 		<div style="background:lightgreen; height:20px; width:20px !important; position: absolute;
@@ -363,9 +259,9 @@
 {{-- section # how it works --}}
 
 {{-- section our services --}}
-<section style="background:#fff"> 
+{{-- <section style="background:#fff"> 
 
-	<div class="container"  style="background:#fff">
+	<div class="container" id="services"  style="background:#fff">
 		<div class="row" style="background:#fff; margin-top:60px;">
 			<div class="col-md-12" >
 				<h4>OUR SERVICES</h4>
@@ -417,9 +313,13 @@
 		</div>
 	</div>
 	
-</section>
+</section> --}}
 	{{-- section our services --}}
 	
+{{-- demo --}}
+@include('demo')
+{{-- demo --}}
+
 				</div>
 
 		
@@ -430,125 +330,14 @@
 
 		</section><!-- #content end -->
 
+<section >
+	<div class="container-fluid" id="app">
+	<projects></projects>
+	<contact-us></contact-us>
+
+	{{-- @include('projectHexagon') --}}
+	</div>
+</section>
 
 
-		<!-- Footer
-		============================================= -->
-		<footer id="footer" class="dark noborder">
-
-			<div class="container center">
-				<div class="footer-widgets-wrap">
-
-					<div class="row divcenter clearfix" style="text-align: left;">
-
-						<div class="col-lg-4">
-
-							<div class="widget clearfix" >
-								<img src="/assets/img/logo.png" alt="" class="img-responsive">
-									<div class="clearfix" style="height: 20px;"></div>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem rerum, ratone					
-								</div>
-
-
-						</div>
-
-						<div class="col-lg-4">
-
-							<div class="widget subscribe-widget clearfix" data-loader="button">
-								<h4>Subscribe</h4>
-
-								<div class="widget-subscribe-form-result"></div>
-								<form id="widget-subscribe-form" action="../include/subscribe.php" role="form" method="post" class="nobottommargin">
-									<input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control form-control-lg not-dark required email" placeholder="Your Email Address">
-									<button class="button button-border button-circle button-light topmargin-sm" type="submit">Subscribe Now</button>
-								</form>
-							</div>
-
-						</div>
-
-						<div class="col-lg-4">
-
-							<div class="widget clearfix">
-								<h4>Contact</h4>
-
-								<p class="lead">795 Folsom Ave, Suite 600<br>San Francisco, CA 94107</p>
-
-								<div class="center topmargin-sm">
-									<a href="#" class="social-icon inline-block noborder si-small si-facebook" title="Facebook">
-										<i class="icon-facebook"></i>
-										<i class="icon-facebook"></i>
-									</a>
-									<a href="#" class="social-icon inline-block noborder si-small si-twitter" title="Twitter">
-										<i class="icon-twitter"></i>
-										<i class="icon-twitter"></i>
-									</a>
-									<a href="#" class="social-icon inline-block noborder si-small si-github" title="Github">
-										<i class="icon-github"></i>
-										<i class="icon-github"></i>
-									</a>
-									<a href="#" class="social-icon inline-block noborder si-small si-pinterest" title="Pinterest">
-										<i class="icon-pinterest"></i>
-										<i class="icon-pinterest"></i>
-									</a>
-								</div>
-							</div>
-
-						</div>
-
-					</div>
-
-				</div>
-			</div>
-
-			<div id="copyrights">
-				<div class="container center clearfix">
-					Copyright TeamVolver {{date('Y')}} | All Rights Reserved
-				</div>
-			</div>
-
-		</footer><!-- #footer end -->
-
-	</div><!-- #wrapper end -->
-
-	<!-- Go To Top
-	============================================= -->
-	<div id="gotoTop" class="icon-angle-up"></div>
-<script src="/assets/js/app.js"></script>
-	<!-- External JavaScripts
-		
-	============================================= -->
-	<script src="/assets/theme/js/jquery.js"></script>
-	<script src="/assets/theme/js/plugins.js"></script>
-
-	<!-- Google Map JavaScripts
-	============================================= -->
-	<script src="https://maps.google.com/maps/api/js?key=AIzaSyDMxJ92oBkSnVNHFX3R8XhtYQPEgk1_IiI"></script>
-	<script src="/assets/theme/js/jquery.gmap.js"></script>
-
-	<!-- Footer Scripts
-	============================================= -->
-	<script src="/assets/theme/js/functions.js"></script>
-
-<script src="https://code.highcharts.com/maps/highmaps.js"></script>
-<script src="https://code.highcharts.com/modules/tilemap.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/offline-exporting.js"></script>
-
-
-
-@yield('scripts')
-
-
-
-	<script>
-
-		jQuery(window).on( 'load', function(){
-		// alert('dsf');
-			$('.node:first-child').click();
-		});
-
-	</script>
-
-
-</body>
-</html>
+@stop

@@ -48,7 +48,7 @@ class AuthController extends Controller
     {
         $socialProviders = config('auth.social.providers');
 
-        return view('auth.login', compact('socialProviders'));
+        return view('layouts.web', compact('socialProviders'));
     }
 
     /**

@@ -49,14 +49,14 @@
 <body class="stretched" >
 
 @if(Auth::guest())
-<div id="loginModal" class="modal fade popup" role="dialog">
+<div id="loginModal" class="modal fade popup" role="dialog" tabindex="-1">
   <div class="modal-dialog modal-lg">
 
     <!-- Modal content-->
     <div class="modal-content">
 
       <div class="modal-body block divcenter">
-
+		        <a class="close" data-dismiss="modal" style="right: 0px; top:0; position: absolute; color:#fff; z-index: 9">&times;</a>
 
 		@include('register')
 		@include('login')
@@ -94,39 +94,7 @@
 
 					<!-- Primary Navigation
 					============================================= -->
-					<nav id="primary-menu">
-
-						<ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
-							@if(Request::path() == "/" || Request::path() == 'login')
-							<li><a href="#" data-href="#wrapper"><div>Home</div></a></li>
-							<li><a href="#" data-href="#team-igniter" data-offset="150"><div>Team Igniter</div></a></li>
-							<li><a href="#" data-href="#team-member" data-offset="165"><div>Team member</div></a></li>
-							<li><a href="#" data-href="#projects"><div>Projects</div></a></li>
-							<li><a href="#" data-href="#services"><div>Services</div></a></li>
-							<li><a href="#" data-href="#contactUs"><div>About Us</div></a></li>
-							@if(Auth::guest())
-							<li><a href="#" data-href="#abc" id="loginButton"><div>Login</div></a></li>							
-							@else
-							<li><a href="/dashboard"  ><div>Dashboard</div></a></li>
-							@endif
-
-							@else
-							<li><a href="/#wrapper" data-href="/#wrapper"><div>Home</div></a></li>
-							<li><a href="/#team-igniter" data-href="/#team-igniter" data-offset="150"><div>Team Igniter</div></a></li>
-							<li><a href="/#team-member" data-href="/#team-member" data-offset="165"><div>Team member</div></a></li>
-							<li><a href="/#projects" data-href="/#projects"><div>Projects</div></a></li>
-							<li><a href="/#services" data-href="/#services"><div>Services</div></a></li>
-							<li><a href="/#contactUs" data-href="/#contactUs"><div>About Us</div></a></li>
-							@if(Auth::guest())
-							<li><a href="#" data-href="#abc" id="loginButton"><div>Login</div></a></li>							
-							@else
-							<li><a href="/dashboard"  ><div>Dashboard</div></a></li>
-							@endif
-
-							@endif
-						</ul>
-
-					</nav><!-- #primary-menu end -->
+					@include('partials.nav')
 
 				</div>
 

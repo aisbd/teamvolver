@@ -1,4 +1,4 @@
-@extends('layouts.auth')
+@extends('layouts.web')
 
 {{-- @section('page-title', "") --}}
 
@@ -331,7 +331,7 @@
 	<projects></projects>
 	<contact-us></contact-us>
 
-								{{-- @include('projectHexagon') --}}
+	{{-- @include('projectHexagon') --}}
 	</div>
 </section>
 

@@ -34229,11 +34229,7 @@ var staticRenderFns = [
     return _c(
       "div",
       { staticClass: "col-md-12", staticStyle: { "text-align": "center" } },
-      [
-        _c("h4", [_vm._v("\n\t\t\t\t\t\t\t\t\tFind Your Dream Team")]),
-        _vm._v(" "),
-        _c("p", [_vm._v("Lrorem ipsum donor fminet ")])
-      ]
+      [_c("h4", [_vm._v("\n\t\t\t\t\t\t\t\t\tFind Your Dream Team")])]
     )
   },
   function() {
@@ -34278,7 +34274,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c(
         "h2",
-        { staticStyle: { "margin-top": "-20px", "margin-bottom": "30px" } },
+        { staticStyle: { "margin-top": "-10px", "margin-bottom": "30px" } },
         [_vm._v("Join Us Now !")]
       )
     ])
