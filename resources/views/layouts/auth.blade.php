@@ -6,6 +6,10 @@
 	<meta name="author" content="Seelim" />
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+	<script>
+		 window.loggedIn = {{\Auth::guest()?'false':'true'}};
+	</script>
 	<!-- Stylesheets
 	============================================= -->
 	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Roboto:300,400,500,700" rel="stylesheet" type="text/css" />

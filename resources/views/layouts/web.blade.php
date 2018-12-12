@@ -331,8 +331,9 @@
 		</section><!-- #content end -->
 
 <section >
-	<div class="container-fluid" id="app">
+	<div class="container-fluid" id="app2">
 	<projects></projects>
+
 	<contact-us></contact-us>
 
 	{{-- @include('projectHexagon') --}}

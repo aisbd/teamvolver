@@ -7,7 +7,9 @@
 
 require('./bootstrap');
 require('./helpers');
-
+import Swal from 'sweetalert2'
+window.Swal = Swal
+require('vue2-animate/dist/vue2-animate.min.css')
 require('vue2-animate/dist/vue2-animate.min.css')
 window.Vue = require('vue');
 Vue.component('form-team', require('./components/FormTeam.vue'));
@@ -24,6 +26,16 @@ Vue.component('hexagon', require('./components/Hexagon.vue'));
 if(document.querySelector('#app')){
     const app = new Vue({
         el: '#app'
+    });
+}
+if(document.querySelector('#app3')){
+    const app3 = new Vue({
+        el: '#app3'
+    });
+}
+if(document.querySelector('#app2')){
+    const app2 = new Vue({
+        el: '#app2'
     });
 }
 if(document.querySelector('#loginModal')){

@@ -1,1 +1,2 @@
 	@extends('layouts.web')
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, voluptatibus odit illum earum molestias provident officia, laboriosam. Velit error delectus, amet. Adipisci dolores cum tenetur quis, nostrum possimus magni veniam.

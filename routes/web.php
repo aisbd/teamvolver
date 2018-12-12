@@ -381,6 +381,7 @@ $router->get('install/error', [
 
 
 // new routes
+Route::resource('/application-submissions', 'ApplicationSubmissionController');
 Route::resource('/projects', 'ProjectController');
 Route::resource('/categories', 'CategoriesController');
 Route::resource('/designations', 'DesignationsController');

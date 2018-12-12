@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "frappe-gantt": "^0.2.0",
+    "sweetalert2": "^7.32.2",
     "vue2-animate": "^2.0.0"
   }
 }
