@@ -297,6 +297,9 @@
 				this.id = "svg"+this._uid
 				if(data == null){
 					data = [];
+
+					var i = 0;
+					var val = 100;
 					axios.get('/projects?random=true').then((response) => {
 						response.data.forEach((v, k)=> {
 									// {
@@ -305,7 +308,9 @@
 									// 	desc: `
 									// 	`
 									// },
-							var obj = {cat: "Team", name: v.name, title: v.name, value: 250, icon: '/d3/img/hex.png'};
+									i++
+									var val = 100 + (20*i)
+							var obj = {cat: "Team", name: v.name, title: v.name, value: val, icon: '/d3/img/hex.png'};
 							data.push(obj)
 						});
 						this.nodes = data;

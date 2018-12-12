@@ -11,6 +11,9 @@ class ProjectController extends Controller
 {
      public function index(){
 
+        if(request()->has('random')){
+           return Designation::take(6)->select('id', 'name')->get();
+        }
           return Project::with('designations')->get();
           
           // return $this->memberProjectPage();
