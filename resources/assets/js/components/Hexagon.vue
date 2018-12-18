@@ -34,7 +34,7 @@
 		let height = +svg.attr('height');
 		let centerX = width * 0.5;
 		let centerY = height * 0.5;
-		let strength = 0.03;
+		let strength = 0.5;
 		let focusedNode;
 
 		let format = d3.format(',d');

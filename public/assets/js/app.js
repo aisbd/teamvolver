@@ -34460,7 +34460,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			var height = +svg.attr('height');
 			var centerX = width * 0.5;
 			var centerY = height * 0.5;
-			var strength = 0.03;
+			var strength = 0.5;
 			var focusedNode = void 0;
 
 			var format = d3.format(',d');
