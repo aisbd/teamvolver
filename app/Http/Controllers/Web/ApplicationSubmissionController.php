@@ -5,10 +5,12 @@ namespace Vanguard\Http\Controllers\Web;
 use Illuminate\Http\Request;
 use Vanguard\Http\Controllers\Controller;
 use Vanguard\ApplicationSubmission;
+use Vanguard\Project;
 class ApplicationSubmissionController extends Controller
 {
     public function __construct()
     {
+
         $this->middleware('auth')->only('store');
     }
     /**
@@ -18,7 +20,9 @@ class ApplicationSubmissionController extends Controller
      */
     public function index()
     {
-        // return view
+        $applications = ApplicationSubmission::whereIn('project_id', Project::where('user_id', request()->user()->id )->pluck('id'))->whereNull('status')->get();
+        // dd($applications);
+        return view('application-submissions')->with(compact('applications'));
     }
 
     /**
@@ -74,9 +78,15 @@ class ApplicationSubmissionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,  $id)
     {
-        //
+        $status= request()->status;
+        $app = ApplicationSubmission::find($id);
+        if($app->authorize()){
+            $app->status = $status;
+            $app->save();
+        }
+        return redirect()->back();
     }
 
     /**

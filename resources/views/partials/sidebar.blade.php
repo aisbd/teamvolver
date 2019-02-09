@@ -15,6 +15,12 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a data-toggle="tooltip" data-placement="bottom" title="Applications" class="nav-link {{ Request::is('application-submissions') ? 'active' : ''  }}" href="/application-submissions">
+                    <i class="fas fa-calendar"></i>
+                </a>
+            </li>
+
 
             <li class="nav-item">
                 <a data-toggle="tooltip" data-placement="bottom" title="Gantt"  class="nav-link {{ Request::is('*gantt*') ? 'active' : ''  }}" href="/gantt">

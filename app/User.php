@@ -124,6 +124,11 @@ class User extends Authenticatable implements TwoFactorAuthenticatableContract, 
         ];
     }
 
+    public function getNameAttribute()
+    {
+        return $this->fullname;
+    }
+
     public function projects(){
         return $this->hasMany(Project::class);
     }

@@ -20,6 +20,7 @@ class CreateApplicationSubmissionsTable extends Migration
             $table->integer('designation_id');
             $table->text('message')->nullable();
             $table->dateTime('seen_at')->nullable();
+            $table->integer('status')->nullable();
             $table->timestamps();
         });
     }
