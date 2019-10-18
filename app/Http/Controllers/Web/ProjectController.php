@@ -11,20 +11,20 @@ class ProjectController extends Controller
 {
      public function index(){
 
-        if(request()->has('random')){
-           return Designation::take(6)->select('id', 'name')->get();
-        }
-          return Project::with('designations')->get();
+        // if(request()->has('random')){
+        //    return Designation::take(6)->select('id', 'name')->get();
+        // }
+        //   return Project::with('designations')->get();
           
-          // return $this->memberProjectPage();
+        //   // return $this->memberProjectPage();
 
 
-      //     if(\Auth::guest()){
-      //          return Designation::take(7)->select('id', 'name')->get();
-      //     }
-      //     if( !\Auth::guest() && request()->user()->type == 'member' && !request()->ajax()){
-      //          return $this->memberProjectPage();
-      //     }
+          if(\Auth::guest()){
+               return Designation::take(7)->select('id', 'name')->get();
+          }
+          if( !\Auth::guest() && request()->user()->type == 'member' && !request()->ajax()){
+               return $this->memberProjectPage();
+          }
 
 
      	// $designations = request()->user()->projects()->first()->designations()->select('id', 'name')->get();
